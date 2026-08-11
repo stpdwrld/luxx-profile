@@ -833,7 +833,7 @@ img{
 
 
 /* =========================================================
-   PHILOSOPHY
+   about
 ========================================================= */
 
 .quote{
@@ -1009,7 +1009,7 @@ footer{
   .hero-image{
   min-height:clamp(360px,58vw,470px);
 
-  background-position:center 70%;
+  background-position:center 90%;
 }
 
   .hero-content{
@@ -1197,7 +1197,7 @@ footer{
   }
 
 
-  /* PHILOSOPHY */
+  /* about */
 
   .quote{
     grid-template-columns:
@@ -1315,36 +1315,35 @@ footer{
 
 <header class="topbar">
 
-  <a class="brand" href="#">
+  <a class="brand" href="#" onclick="scrollToSection('profile'); return false;">
     LUXX
   </a>
 
   <nav class="nav">
 
-    <a class="active" href="#profile">
+    <a class="active" href="#" onclick="scrollToSection('profile'); return false;">
       Profile
     </a>
 
-    <a href="#setup">
+    <a href="#" onclick="scrollToSection('setup'); return false;">
       Setup
     </a>
 
-    <a href="#music">
+    <a href="#" onclick="scrollToSection('music'); return false;">
       Music
     </a>
 
-    <a href="#roblox">
+    <a href="#" onclick="scrollToSection('roblox'); return false;">
       Roblox
     </a>
 
-    <a href="#philosophy">
-      Philosophy
+    <a href="#" onclick="scrollToSection('About'); return false;">
+      About
     </a>
 
   </nav>
 
 </header>
-
 
 <main>
 
@@ -1362,7 +1361,7 @@ footer{
   and a few things I enjoy.
 </p>
 
-<a class="scroll" href="#profile">
+<a class="scroll" href="profile">
   Explore
   <span>↓</span>
 </a>
@@ -1720,7 +1719,7 @@ footer{
     target="_blank"
     rel="noopener"
   >
-    Lihat Profil
+    View Profile
   </a>
 
 </div>
@@ -1729,10 +1728,10 @@ footer{
 
 
 <!-- =======================================================
-     PHILOSOPHY
+     about
 ======================================================= -->
 
-<section id="philosophy" class="quote">
+<section id="about" class="quote">
 
   <aside class="row-label">
 
