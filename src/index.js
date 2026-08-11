@@ -3,951 +3,336 @@ export default {
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>LUXX — Personal Portfolio</title>
-
-  <meta
-    name="description"
-    content="LUXX — Personal portfolio, music and audio setup."
-  >
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-
-    :root {
-      --black: #070707;
-      --white: #f5f5f2;
-      --soft: #b5b5b0;
-      --muted: #686865;
-      --line: #20201f;
-      --card: #0d0d0c;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: "DM Sans", sans-serif;
-      overflow-x: hidden;
-    }
-
-    body::selection {
-      background: #f5f5f2;
-      color: #070707;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      width: min(1180px, 88%);
-      margin: auto;
-    }
-
-    /* ---------------- NAV ---------------- */
-
-    nav {
-      height: 92px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    .brand {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 6px;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 34px;
-    }
-
-    .nav-right a {
-      color: var(--muted);
-      font-size: 9px;
-      letter-spacing: 2px;
-      transition: .25s ease;
-    }
-
-    .nav-right a:hover {
-      color: var(--white);
-    }
-
-    .available {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      color: #777;
-
-      font-size: 8px;
-      letter-spacing: 2px;
-    }
-
-    .available-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #d7d7d2;
-    }
-
-    /* ---------------- HERO ---------------- */
-
-    .hero {
-      min-height: 82vh;
-
-      display: flex;
-      align-items: center;
-
-      padding: 90px 0;
-    }
-
-    .hero-inner {
-      width: 100%;
-    }
-
-    .eyebrow {
-      color: var(--muted);
-
-      font-size: 9px;
-      font-weight: 500;
-
-      letter-spacing: 4px;
-
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-size: clamp(82px, 17vw, 205px);
-
-      line-height: .78;
-
-      font-weight: 600;
-
-      letter-spacing: -9px;
-    }
-
-    .hero h1 span {
-      color: #4a4a47;
-    }
-
-    .hero-bottom {
-      display: flex;
-
-      justify-content: space-between;
-      align-items: flex-end;
-
-      margin-top: 55px;
-    }
-
-    .hero-intro {
-      width: min(430px, 100%);
-
-      color: #81817d;
-
-      font-size: 13px;
-
-      line-height: 1.9;
-    }
-
-    .hero-scroll {
-      color: #4e4e4b;
-
-      font-size: 8px;
-
-      letter-spacing: 3px;
-    }
-
-    /* ---------------- SECTION ---------------- */
-
-    section {
-      padding: 145px 0;
-
-      border-top: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: flex;
-
-      justify-content: space-between;
-      align-items: flex-start;
-
-      margin-bottom: 65px;
-    }
-
-    .section-number {
-      color: #4d4d4a;
-
-      font-size: 8px;
-
-      letter-spacing: 3px;
-    }
-
-    .section-title {
-      font-size: clamp(45px, 7vw, 90px);
-
-      line-height: .9;
-
-      letter-spacing: -4px;
-
-      font-weight: 600;
-    }
-
-    /* ---------------- PROFILE ---------------- */
-
-    .profile-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 110px;
-    }
-
-    .profile-large {
-      font-size: clamp(25px, 3vw, 39px);
-
-      line-height: 1.3;
-
-      font-weight: 500;
-    }
-
-    .profile-large span {
-      color: #656561;
-    }
-
-    .profile-copy {
-      color: #858581;
-
-      font-size: 13px;
-
-      line-height: 2;
-    }
-
-    .profile-copy p + p {
-      margin-top: 24px;
-    }
-
-    .quote {
-      margin-top: 80px;
-
-      padding: 45px 0;
-
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(24px, 4vw, 43px);
-
-      line-height: 1.35;
-    }
-
-    .quote small {
-      display: block;
-
-      margin-top: 20px;
-
-      color: #4d4d4a;
-
-      font-family: "DM Sans", sans-serif;
-
-      font-size: 8px;
-
-      letter-spacing: 3px;
-    }
-
-    /* ---------------- AUDIO SETUP ---------------- */
-
-    .setup-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .setup-card {
-      min-height: 340px;
-
-      padding: 30px;
-
-      position: relative;
-
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.025),
-          transparent 55%
-        );
-
-      transition:
-        background .3s ease,
-        transform .3s ease;
-    }
-
-    .setup-card:hover {
-      background: #10100f;
-      transform: translateY(-3px);
-    }
-
-    .setup-index {
-      color: #494946;
-
-      font-size: 8px;
-
-      letter-spacing: 3px;
-    }
-
-    .setup-category {
-      position: absolute;
-
-      left: 30px;
-      bottom: 80px;
-
-      color: #555551;
-
-      font-size: 8px;
-
-      letter-spacing: 3px;
-    }
-
-    .setup-name {
-      position: absolute;
-
-      left: 30px;
-      bottom: 34px;
-
-      font-size: 23px;
-
-      font-weight: 500;
-    }
-
-    /* ---------------- MUSIC ---------------- */
-
-    .music-intro {
-      max-width: 520px;
-
-      color: #777773;
-
-      font-size: 13px;
-
-      line-height: 1.9;
-
-      margin-bottom: 60px;
-    }
-
-    .platform-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .platform {
-      display: flex;
-
-      justify-content: space-between;
-      align-items: center;
-
-      padding: 32px 8px;
-
-      border-bottom: 1px solid var(--line);
-
-      transition:
-        padding .3s ease,
-        background .3s ease;
-    }
-
-    .platform:hover {
-      padding-left: 20px;
-      padding-right: 20px;
-
-      background: #0c0c0b;
-    }
-
-    .platform-left {
-      display: flex;
-      align-items: baseline;
-      gap: 22px;
-    }
-
-    .platform-name {
-      font-size: 28px;
-      font-weight: 500;
-    }
-
-    .platform-type {
-      color: #555552;
-
-      font-size: 8px;
-
-      letter-spacing: 2px;
-    }
-
-    .platform-arrow {
-      color: #555552;
-
-      font-size: 17px;
-    }
-
-    /* ---------------- PHILOSOPHY ---------------- */
-
-    .philosophy {
-      min-height: 75vh;
-
-      display: flex;
-
-      align-items: center;
-    }
-
-    .philosophy-inner {
-      width: 100%;
-    }
-
-    .philosophy-label {
-      color: #4e4e4b;
-
-      font-size: 8px;
-
-      letter-spacing: 4px;
-
-      margin-bottom: 35px;
-    }
-
-    .philosophy h2 {
-      max-width: 950px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(48px, 8vw, 105px);
-
-      font-weight: 500;
-
-      line-height: 1.02;
-
-      letter-spacing: -3px;
-    }
-
-    .philosophy h2 em {
-      color: #555552;
-    }
-
-    /* ---------------- FOOTER ---------------- */
-
-    footer {
-      padding: 30px 0 45px;
-
-      border-top: 1px solid var(--line);
-
-      display: flex;
-
-      justify-content: space-between;
-
-      color: #464643;
-
-      font-size: 8px;
-
-      letter-spacing: 2px;
-    }
-
-    /* ---------------- MOBILE ---------------- */
-
-    @media (max-width: 720px) {
-
-      .page {
-        width: 88%;
-      }
-
-      nav {
-        height: 76px;
-      }
-
-      .nav-right {
-        gap: 14px;
-      }
-
-      .available {
-        display: none;
-      }
-
-      .nav-right a {
-        font-size: 7px;
-      }
-
-      .hero {
-        min-height: 70vh;
-
-        padding: 70px 0;
-      }
-
-      .hero h1 {
-        font-size: 25vw;
-
-        letter-spacing: -5px;
-      }
-
-      .hero-bottom {
-        display: block;
-
-        margin-top: 40px;
-      }
-
-      .hero-scroll {
-        margin-top: 30px;
-      }
-
-      section {
-        padding: 95px 0;
-      }
-
-      .section-head {
-        margin-bottom: 45px;
-      }
-
-      .profile-grid {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-      }
-
-      .quote {
-        margin-top: 55px;
-      }
-
-      .setup-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .setup-card {
-        min-height: 250px;
-      }
-
-      .platform-left {
-        gap: 10px;
-      }
-
-      .platform-name {
-        font-size: 21px;
-      }
-
-      .platform-type {
-        display: none;
-      }
-
-      .philosophy {
-        min-height: 60vh;
-      }
-
-      .philosophy h2 {
-        letter-spacing: -1.5px;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 14px;
-      }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUXX — Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050505;
+  --panel:#0a0a0a;
+  --line:rgba(255,255,255,.13);
+  --muted:#8c8c8c;
+  --soft:#c7c7c7;
+  --white:#f2f2f0;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Inter",Arial,sans-serif;
+  --mono:"DM Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--white);
+  font-family:var(--sans);font-weight:300;
+  letter-spacing:.02em;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:#eee;color:#050505}
+
+.container{width:min(1180px,92vw);margin:auto}
+.topbar{
+  position:absolute;z-index:10;top:0;left:0;width:100%;
+  padding:28px 3.3vw;display:flex;align-items:center;justify-content:space-between;
+}
+.brand{font-size:17px;letter-spacing:.48em;font-weight:400}
+.nav{display:flex;gap:42px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.nav a{opacity:.78;transition:.25s}
+.nav a:hover{opacity:1}
+.nav a.active:after{
+  content:"";display:block;width:4px;height:4px;border-radius:50%;
+  background:#fff;margin:10px auto 0;
+}
+
+.hero{
+  min-height:650px;display:grid;grid-template-columns:42% 58%;
+  border-bottom:1px solid var(--line);
+}
+.hero-image{
+  min-height:650px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.05),rgba(0,0,0,.52)),
+    url("https://raw.githubusercontent.com/stpdwrld/bahanprof/main/my.jpg")
+    center/cover no-repeat;
+  filter:grayscale(1);
+}
+.hero-content{
+  position:relative;padding:145px 7vw 70px 5.5vw;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.kicker,.section-label{
+  font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#aaa;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:400;font-size:clamp(80px,10vw,150px);
+  line-height:.82;margin:27px 0 25px;letter-spacing:-.055em;
+}
+.hero-copy{max-width:430px;color:#9b9b9b;font-size:16px;line-height:1.8}
+.scroll{
+  margin-top:38px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:#aaa;display:flex;gap:12px;align-items:center
+}
+.scroll span{font-size:17px;color:#ddd}
+.hero-mark{
+  position:absolute;right:48px;top:190px;height:185px;border-left:1px solid var(--line);
+}
+.hero-mark:before,.hero-mark:after{
+  content:"";position:absolute;left:-5px;width:9px;height:1px;background:#eee
+}
+.hero-mark:before{top:0}.hero-mark:after{bottom:0}
+
+.row{
+  display:grid;grid-template-columns:190px 1fr;
+  border-bottom:1px solid var(--line);min-height:220px;
+}
+.row-label{padding:40px 0 35px 3px}
+.num{font-family:var(--mono);font-size:11px;color:#aaa;margin-bottom:10px}
+.row-title{
+  font-size:12px;text-transform:uppercase;letter-spacing:.13em
+}
+.dash{display:block;width:19px;border-top:1px solid #aaa;margin-top:20px}
+
+.profile{
+  display:grid;grid-template-columns:1.2fr .9fr;gap:70px;padding:48px 5px;
+  align-items:center
+}
+.profile h2,.quote h2{
+  font-family:var(--serif);font-size:42px;line-height:1.1;font-weight:400;
+  margin:0;letter-spacing:-.025em
+}
+.profile h2 em,.quote em{color:#777}
+.profile p{color:#8f8f8f;line-height:1.8;font-size:14px;margin:0;max-width:390px}
+.signature{font-family:var(--serif);font-style:italic;font-size:27px;margin-top:12px;color:#ddd}
+
+.setup-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:17px;padding:38px 5px 42px
+}
+.card{
+  min-height:270px;border:1px solid var(--line);background:linear-gradient(145deg,#0b0b0b,#070707);
+  padding:20px;position:relative;overflow:hidden;transition:.3s
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.28)}
+.card .index{font-family:var(--mono);font-size:11px;color:#aaa}
+.card .type{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-left:8px}
+.card h3{font-family:var(--serif);font-weight:400;font-size:25px;margin:20px 0 10px}
+.product-image{
+  position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);
+  width:86%;height:150px;object-fit:contain;filter:grayscale(1) contrast(1.1);
+  opacity:.9;
+}
+
+.platforms{padding:38px 5px 45px;display:grid;gap:9px}
+.platform{
+  min-height:58px;border:1px solid var(--line);display:grid;
+  grid-template-columns:58px 1fr 1fr 25px;align-items:center;padding:0 16px;
+  background:linear-gradient(90deg,#0b0b0b,#080808);transition:.25s
+}
+.platform:hover{border-color:#555;transform:translateX(3px)}
+.logo{
+  width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  font-size:16px;font-weight:500;background:#eee;color:#111
+}
+.logo.tidal{border-radius:0;background:transparent;color:#eee;font-size:23px}
+.platform-name{font-size:16px;letter-spacing:.06em}
+.platform-desc{text-align:right;color:#777;font-size:12px}
+.ext{font-size:19px;color:#999}
+
+.roblox-box{
+  margin:15px 0 42px 5px;border:1px solid var(--line);min-height:170px;
+  display:grid;grid-template-columns:30% 1fr;overflow:hidden;background:#080808
+}
+.roblox-art{
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.08),rgba(0,0,0,.62)),
+    url("https://raw.githubusercontent.com/stpdwrld/bahanprof/main/roblox.png")
+    center/cover no-repeat;
+  filter:grayscale(1);
+}
+.roblox-info{padding:30px}
+.roblox-name{font-family:var(--serif);font-size:31px}
+.badge{
+  display:inline-grid;place-items:center;width:17px;height:17px;
+  background:#eee;color:#111;border-radius:50%;font-size:10px;margin-left:5px
+}
+.roblox-meta{font-size:12px;color:#999;margin:9px 0 18px}
+.roblox-desc{font-size:13px;color:#777;line-height:1.6}
+.button{
+  display:inline-flex;align-items:center;gap:12px;border:1px solid #555;
+  padding:12px 16px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;
+  float:right;margin-top:-42px;transition:.25s
+}
+.button:hover{background:#eee;color:#111}
+
+.quote{
+  min-height:180px;display:grid;grid-template-columns:190px 1fr;
+  border-bottom:1px solid var(--line);align-items:center
+}
+.quote-content{position:relative;padding:40px 5px;overflow:hidden}
+.quote h2{font-size:42px}
+.wave{
+  position:absolute;right:0;top:20px;width:47%;height:120px;opacity:.28;
+  background:
+   repeating-linear-gradient(90deg,transparent 0 7px,rgba(255,255,255,.16) 8px 9px);
+  mask-image:radial-gradient(ellipse at center,black 0 35%,transparent 72%);
+}
+
+footer{
+  min-height:74px;display:flex;align-items:center;justify-content:space-between;
+  color:#777;font-size:10px;text-transform:uppercase;letter-spacing:.14em
+}
+.footer-center{color:#aaa}
+
+@media(max-width:800px){
+  .topbar{padding:22px 5vw}
+  .nav{gap:14px;font-size:9px}.nav a:nth-child(n+4){display:none}
+  .hero{grid-template-columns:1fr;min-height:760px}
+  .hero-image{min-height:390px}
+  .hero-content{min-height:370px;padding:65px 7vw}
+  .hero h1{font-size:78px;margin:20px 0}
+  .hero-mark{display:none}
+  .row,.quote{grid-template-columns:85px 1fr}
+  .profile{grid-template-columns:1fr;gap:28px}
+  .setup-grid{grid-template-columns:1fr}
+  .card{min-height:250px}
+  .roblox-box{grid-template-columns:1fr;margin-left:0}
+  .roblox-art{height:190px}
+  .button{float:none;margin:20px 0 0}
+  .platform{grid-template-columns:45px 1fr 25px}
+  .platform-desc{display:none}
+  .quote h2{font-size:31px}
+}
+
+.image-logo{background:transparent;border-radius:0;overflow:hidden}
+.image-logo img{width:32px;height:32px;object-fit:contain;filter:grayscale(1)}
+.product-image{width:72%;height:auto;aspect-ratio:1/1;object-fit:contain;bottom:-18px}
+.hero-image{background-position:center top}
+@media(max-width:800px){.hero-image{background-position:center 18%}}
+
+
+.roblox-art{
+  background-size:cover;
+  background-position:center;
+}
+
+</style>
 </head>
 
 <body>
-
-<div class="page">
-
-  <!-- NAVIGATION -->
-
-  <nav>
-
-    <div class="brand">
-      LUXX
-    </div>
-
-    <div class="nav-right">
-
-      <div class="available">
-        <div class="available-dot"></div>
-        PERSONAL AUDIO
-      </div>
-
-      <a href="#profile">
-        PROFILE
-      </a>
-
-      <a href="#setup">
-        SETUP
-      </a>
-
-      <a href="#music">
-        MUSIC
-      </a>
-
-    </div>
-
+<header class="topbar">
+  <a class="brand" href="#">LUXX</a>
+  <nav class="nav">
+    <a class="active" href="#profile">Profile</a>
+    <a href="#setup">Setup</a>
+    <a href="#music">Music</a>
+    <a href="#roblox">Roblox</a>
+    <a href="#philosophy">Philosophy</a>
   </nav>
-
-
-  <!-- HERO -->
-
-  <header class="hero">
-
-    <div class="hero-inner">
-
-      <div class="eyebrow">
-        PERSONAL PORTFOLIO · 2026
-      </div>
-
-      <h1>
-        LU<span>XX</span>
-      </h1>
-
-      <div class="hero-bottom">
-
-        <p class="hero-intro">
-          Music, sound and the pursuit of a better
-          listening experience. A personal archive of
-          what I listen to and the gear I use.
-        </p>
-
-        <div class="hero-scroll">
-          SCROLL TO EXPLORE ↓
-        </div>
-
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <!-- PROFILE -->
-
-  <section id="profile">
-
-    <div class="section-head">
-
-      <div class="section-number">
-        01 / PROFILE
-      </div>
-
-    </div>
-
-    <div class="profile-grid">
-
-      <div class="profile-large">
-
-        I listen to music
-        <span>carefully.</span>
-
-        <br><br>
-
-        Not just for the sound,
-        but for everything
-        it makes me feel.
-
-      </div>
-
-
-      <div class="profile-copy">
-
-        <p>
-          Welcome to LUXX — a small personal
-          space built around music and audio.
-        </p>
-
-        <p>
-          I enjoy discovering different artists,
-          exploring streaming platforms and
-          experimenting with personal audio gear.
-        </p>
-
-        <p>
-          The goal is simple:
-          <strong>less noise, better music.</strong>
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="quote">
-
-      “Music is the end game.”
-
-      <small>
-        LUXX · PERSONAL AUDIO
-      </small>
-
-    </div>
-
-  </section>
-
-
-  <!-- SETUP -->
-
-  <section id="setup">
-
-    <div class="section-head">
-
-      <div>
-
-        <div class="section-number">
-          02 / AUDIO
-        </div>
-
-        <h2 class="section-title">
-          MY<br>
-          SETUP
-        </h2>
-
-      </div>
-
-    </div>
-
-
-    <div class="setup-grid">
-
-
-      <article class="setup-card">
-
-        <div class="setup-index">
-          01
-        </div>
-
-        <div class="setup-category">
-          IN-EAR MONITOR
-        </div>
-
-        <div class="setup-name">
-          Kiwi Ears Belle
-        </div>
-
-      </article>
-
-
-      <article class="setup-card">
-
-        <div class="setup-index">
-          02
-        </div>
-
-        <div class="setup-category">
-          USB DAC
-        </div>
-
-        <div class="setup-name">
-          JM7
-        </div>
-
-      </article>
-
-
-      <article class="setup-card">
-
-        <div class="setup-index">
-          03
-        </div>
-
-        <div class="setup-category">
-          MUSIC PLAYER
-        </div>
-
-        <div class="setup-name">
-          UAPP
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- MUSIC -->
-
-  <section id="music">
-
-    <div class="section-head">
-
-      <div>
-
-        <div class="section-number">
-          03 / MUSIC
-        </div>
-
-        <h2 class="section-title">
-          WHERE I<br>
-          LISTEN
-        </h2>
-
-      </div>
-
-    </div>
-
-
-    <p class="music-intro">
-
-      Different platforms, different libraries,
-      same reason — finding music worth listening to.
-
-    </p>
-
-
-    <div class="platform-list">
-
-
-      <a
-        class="platform"
-        href="https://tidal.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <div class="platform-left">
-
-          <div class="platform-name">
-            TIDAL
-          </div>
-
-          <div class="platform-type">
-            HIGH FIDELITY STREAMING
-          </div>
-
-        </div>
-
-        <div class="platform-arrow">
-          ↗
-        </div>
-
-      </a>
-
-
-      <a
-        class="platform"
-        href="https://www.qobuz.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <div class="platform-left">
-
-          <div class="platform-name">
-            QOBUZ
-          </div>
-
-          <div class="platform-type">
-            HI-RES MUSIC
-          </div>
-
-        </div>
-
-        <div class="platform-arrow">
-          ↗
-        </div>
-
-      </a>
-
-
-      <a
-        class="platform"
-        href="https://open.spotify.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <div class="platform-left">
-
-          <div class="platform-name">
-            SPOTIFY
-          </div>
-
-          <div class="platform-type">
-            EVERYDAY LISTENING
-          </div>
-
-        </div>
-
-        <div class="platform-arrow">
-          ↗
-        </div>
-
-      </a>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- PHILOSOPHY -->
-
-  <section class="philosophy">
-
-    <div class="philosophy-inner">
-
-      <div class="philosophy-label">
-        04 / PHILOSOPHY
-      </div>
-
-      <h2>
-        Find the music.
-        <em>Forget the noise.</em>
-      </h2>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-image"></div>
+  <div class="hero-content">
+    <div class="kicker">Personal Portfolio</div>
+    <h1>LUXX</h1>
+    <p class="hero-copy">A personal space for music,<br>sound, and the pursuit of<br>better listening.</p>
+    <a class="scroll" href="#profile">Scroll to explore <span>↓</span></a>
+    <div class="hero-mark"></div>
+  </div>
+</section>
+
+<section id="profile" class="row">
+  <aside class="row-label">
+    <div class="num">01</div><div class="row-title">Profile</div><span class="dash"></span>
+  </aside>
+  <div class="profile">
+    <h2>I listen to music<br><em>carefully.</em></h2>
     <div>
-      LUXX
+      <p>Not just for the sound, but for everything it makes me feel.</p>
+      <p style="margin-top:14px">This is where I collect, enjoy, and appreciate music in the best way I can.</p>
+      <div class="signature">Luxx</div>
     </div>
+  </div>
+</section>
 
-    <div>
-      KIWI EARS BELLE · JM7 · UAPP
+<section id="setup" class="row">
+  <aside class="row-label">
+    <div class="num">02</div><div class="row-title">Audio Setup</div><span class="dash"></span>
+  </aside>
+  <div class="setup-grid">
+    <article class="card">
+      <span class="index">01</span><span class="type">IEM</span>
+      <h3>Kiwi Ears Belle</h3>
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/iem.png" alt="IEM">
+    </article>
+    <article class="card">
+      <span class="index">02</span><span class="type">DAC</span>
+      <h3>JM7</h3>
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac.png" alt="Audio DAC">
+    </article>
+    <article class="card">
+      <span class="index">03</span><span class="type">Player</span>
+      <h3>UAPP</h3>
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/uapp.png" alt="Music player">
+    </article>
+  </div>
+</section>
+
+<section id="music" class="row">
+  <aside class="row-label">
+    <div class="num">03</div><div class="row-title">Music Platforms</div><span class="dash"></span>
+  </aside>
+  <div class="platforms">
+    <a class="platform" href="https://tidal.com" target="_blank" rel="noopener">
+      <span class="logo image-logo"><img src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/tidal.png" alt="TIDAL"></span><span class="platform-name">TIDAL</span>
+      <span class="platform-desc">High Fidelity Streaming.</span><span class="ext">↗</span>
+    </a>
+    <a class="platform" href="https://www.qobuz.com" target="_blank" rel="noopener">
+      <span class="logo image-logo"><img src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/qobuz.png" alt="Qobuz"></span><span class="platform-name">QOBUZ</span>
+      <span class="platform-desc">Hi-Res. Studio Quality.</span><span class="ext">↗</span>
+    </a>
+    <a class="platform" href="https://open.spotify.com" target="_blank" rel="noopener">
+      <span class="logo image-logo"><img src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/spotify.png" alt="Spotify"></span><span class="platform-name">SPOTIFY</span>
+      <span class="platform-desc">Everyday Listening.</span><span class="ext">↗</span>
+    </a>
+  </div>
+</section>
+
+<section id="roblox" class="row">
+  <aside class="row-label">
+    <div class="num">04</div><div class="row-title">Roblox</div><span class="dash"></span>
+  </aside>
+  <div class="roblox-box">
+    <div class="roblox-art"></div>
+    <div class="roblox-info">
+      <div class="roblox-name">LUXXER <span class="badge">✓</span></div>
+      <div class="roblox-meta">Roblox Player · Creator</div>
+      <div class="roblox-desc">Exploring games, building ideas,<br>and having fun.</div>
+      <a class="button" href="https://www.roblox.com/users/" target="_blank" rel="noopener">View Roblox Profile ↗</a>
     </div>
+  </div>
+</section>
 
-    <div>
-      © 2026
-    </div>
+<section id="philosophy" class="quote">
+  <aside class="row-label" style="padding-left:3px">
+    <div class="num">05</div><div class="row-title">Philosophy</div><span class="dash"></span>
+  </aside>
+  <div class="quote-content">
+    <h2>Find the music.<br><em>Forget the noise.</em></h2>
+    <div class="wave"></div>
+  </div>
+</section>
+</main>
 
-  </footer>
-
-</div>
-
+<footer class="container">
+  <span>LUXX</span>
+  <span class="footer-center">KIWI EARS BELLE &nbsp; · &nbsp; JM7 &nbsp; · &nbsp; UAPP</span>
+  <span>© 2026</span>
+</footer>
 </body>
 </html>`;
 
