@@ -747,13 +747,13 @@ img{
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.08),
-      rgba(0,0,0,.65)
+      rgba(0,0,0,.02),
+      rgba(0,0,0,.12)
     ),
     url("https://raw.githubusercontent.com/stpdwrld/bahanprof/main/roblox.png")
     center / cover no-repeat;
 
-  filter:grayscale(1);
+  filter:none;
 }
 
 .roblox-info{
@@ -1007,10 +1007,10 @@ footer{
   }
 
   .hero-image{
-    min-height:clamp(360px,58vw,470px);
+  min-height:clamp(360px,58vw,470px);
 
-    background-position:center 12%;
-  }
+  background-position:center 25%;
+}
 
   .hero-content{
     min-height:0;
@@ -1531,252 +1531,4 @@ footer{
       <span class="logo image-logo">
 
         <img
-          src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/tidal.png"
-          alt="TIDAL"
-        >
-
-      </span>
-
-
-      <span class="platform-name">
-        TIDAL
-      </span>
-
-
-      <span class="platform-desc">
-        High Fidelity Streaming.
-      </span>
-
-
-      <a
-        class="ext"
-        href="https://tidal.com"
-        target="_blank"
-        rel="noopener"
-        aria-label="Open TIDAL"
-      >
-
-        <!-- CLEAN SVG EXTERNAL LINK -->
-
-        <svg
-          viewBox="0 0 16 16"
-          aria-hidden="true"
-        >
-
-          <path d="M4 12L12 4"></path>
-
-          <path d="M6 4H12V10"></path>
-
-        </svg>
-
-      </a>
-
-    </div>
-
-
-    <!-- QOBUZ -->
-
-    <div class="platform">
-
-      <span class="logo image-logo">
-
-        <img
-          src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/qobuz.png"
-          alt="Qobuz"
-        >
-
-      </span>
-
-
-      <span class="platform-name">
-        QOBUZ
-      </span>
-
-
-      <span class="platform-desc">
-        Hi-Res. Studio Quality.
-      </span>
-
-
-      <a
-        class="ext"
-        href="https://www.qobuz.com"
-        target="_blank"
-        rel="noopener"
-        aria-label="Open Qobuz"
-      >
-
-        <svg
-          viewBox="0 0 16 16"
-          aria-hidden="true"
-        >
-
-          <path d="M4 12L12 4"></path>
-
-          <path d="M6 4H12V10"></path>
-
-        </svg>
-
-      </a>
-
-    </div>
-
-
-    <!-- SPOTIFY -->
-
-    <div class="platform">
-
-      <span class="logo image-logo">
-
-        <img
-          src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/spotify.png"
-          alt="Spotify"
-        >
-
-      </span>
-
-
-      <span class="platform-name">
-        SPOTIFY
-      </span>
-
-
-      <span class="platform-desc">
-        Everyday Listening.
-      </span>
-
-
-      <a
-        class="ext"
-        href="https://open.spotify.com"
-        target="_blank"
-        rel="noopener"
-        aria-label="Open Spotify"
-      >
-
-        <svg
-          viewBox="0 0 16 16"
-          aria-hidden="true"
-        >
-
-          <path d="M4 12L12 4"></path>
-
-          <path d="M6 4H12V10"></path>
-
-        </svg>
-
-      </a>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     ROBLOX
-======================================================= -->
-
-<section id="roblox" class="row">  <aside class="row-label"><div class="num">
-  04
-</div>
-
-<div class="row-title">
-  Roblox
-</div>
-
-<span class="dash"></span>
-
-  </aside>  <div class="roblox-box"><div class="roblox-art"></div>
-
-
-<div class="roblox-info">
-
-  <div class="roblox-name">
-    LUXXER
-
-    <span class="badge">
-      ✓
-    </span>
-  </div>
-
-
-  <div class="roblox-meta">
-    Roblox
-  </div>
-
-
-  <div class="roblox-desc">
-    Beberapa game yang dimainkan<br>
-    dan dunia yang dijelajahi.
-  </div>
-
-
-  <a
-    class="button"
-    href="https://www.roblox.com/users/"
-    target="_blank"
-    rel="noopener"
-  >
-    Lihat Profil
-  </a>
-
-</div>
-
-  </div></section>
-
-
-<!-- =======================================================
-     PHILOSOPHY
-======================================================= -->
-
-<section id="philosophy" class="quote">  <aside class="row-label"><div class="num">
-  05
-</div>
-
-<div class="row-title">
-  About
-</div>
-
-<span class="dash"></span>
-
-  </aside>  <div class="quote-content"><h2>
-  Just music.<br>
-  <em>Nothing more.</em>
-</h2>
-
-<div class="wave"></div>
-
-  </div></section></main>
-
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer>
-
-  <span>
-    LUXX
-  </span>
-
-  <span>
-    © 2026
-  </span>
-
-</footer>
-
-
-</body>
-</html>
-`;
-
-    return new Response(html, {
-      headers: {
-        "content-type": "text/html; charset=UTF-8"
-      }
-    });
-  }
-};
+        
