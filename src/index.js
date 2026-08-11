@@ -1358,12 +1358,12 @@ footer{
 </h1>
 
 <p class="hero-copy">
-  Tentang musik, suara,<br>
-  dan hal-hal yang gua nikmati.
+  About music, sound,<br>
+  and a few things I enjoy.
 </p>
 
 <a class="scroll" href="#profile">
-  Jelajahi
+  Explore
   <span>↓</span>
 </a>
 
@@ -1376,30 +1376,31 @@ footer{
      PROFILE
 ======================================================= -->
 
-<section id="profile" class="row">  <aside class="row-label"><div class="num">
-  01
-</div>
-
-<div class="row-title">
+<section id="profile" class="row">
+  <aside class="row-label">
+    <div class="num">
+      01
+    </div><div class="row-title">
   Profile
 </div>
 
 <span class="dash"></span>
 
   </aside>  <div class="profile"><h2>
-  Musik, audio,<br>
-  <em>dan Roblox.</em>
+  Music, audio,<br>
+  <em>and games.</em>
 </h2>
-
 
 <div>
 
   <p>
-    Beberapa hal yang menjadi bagian dari keseharian.
+    A small collection of things
+    that make up my everyday life.
   </p>
 
   <p style="margin-top:14px">
-    Musik yang didengarkan, audio yang digunakan, dan beberapa hal lainnya.
+    What I listen to, what I use,<br>
+    and what I enjoy.
   </p>
 
   <div class="signature">
@@ -1408,8 +1409,8 @@ footer{
 
 </div>
 
-  </div></section>
-
+  </div>
+</section>
 
 <!-- =======================================================
      AUDIO SETUP
@@ -1684,7 +1685,7 @@ footer{
 </div>
 
 <div class="row-title">
-  Roblox
+  GAMES
 </div>
 
 <span class="dash"></span>
