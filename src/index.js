@@ -7,7 +7,7 @@ export default {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LUXX — Personal Portfolio</title>
+<title>LUXX</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1441,7 +1441,7 @@ footer{
   <div class="product-frame">
     <img
       class="product-image"
-      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/iem.jpg"
+      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/iem.png"
       alt="Kiwi Ears Belle"
     >
   </div>
@@ -1465,7 +1465,7 @@ footer{
   <div class="product-frame">
     <img
       class="product-image"
-      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac.jpg"
+      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac.png"
       alt="JCALLY JM7"
     >
   </div>
@@ -1489,7 +1489,7 @@ footer{
   <div class="product-frame">
     <img
       class="product-image"
-      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/uapp.jpg"
+      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/uapp.png"
       alt="USB Audio Player PRO"
     >
   </div>
