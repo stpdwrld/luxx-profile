@@ -3,638 +3,948 @@ export default {
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LUXX — Personal Portfolio</title>
+
+  <meta
+    name="description"
+    content="LUXX — Personal portfolio, music and audio setup."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --black: #070707;
+      --white: #f5f5f2;
+      --soft: #b5b5b0;
+      --muted: #686865;
+      --line: #20201f;
+      --card: #0d0d0c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::selection {
+      background: #f5f5f2;
+      color: #070707;
+    }
 
-<title>LUXX — Personal Audio</title>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+    .page {
+      width: min(1180px, 88%);
+      margin: auto;
+    }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    /* ---------------- NAV ---------------- */
 
-html {
-  scroll-behavior: smooth;
-}
+    nav {
+      height: 92px;
 
-body {
-  background: #080808;
-  color: #f2f2f2;
-  font-family: Inter, sans-serif;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
 
-.container {
-  width: min(1050px, 88%);
-  margin: auto;
-}
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 6px;
+    }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
 
-/* NAV */
+    .nav-right a {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 2px;
+      transition: .25s ease;
+    }
 
-nav {
-  height: 90px;
+    .nav-right a:hover {
+      color: var(--white);
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    .available {
+      display: flex;
+      align-items: center;
+      gap: 8px;
 
-.logo {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 6px;
-}
+      color: #777;
 
-.nav-links {
-  display: flex;
-  gap: 28px;
-}
+      font-size: 8px;
+      letter-spacing: 2px;
+    }
 
-.nav-links a {
-  color: #666;
-  font-size: 10px;
-  letter-spacing: 2px;
-  transition: .25s;
-}
+    .available-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #d7d7d2;
+    }
 
-.nav-links a:hover {
-  color: #fff;
-}
+    /* ---------------- HERO ---------------- */
 
+    .hero {
+      min-height: 82vh;
 
-/* HERO */
+      display: flex;
+      align-items: center;
 
-.hero {
-  min-height: 78vh;
+      padding: 90px 0;
+    }
 
-  display: flex;
-  align-items: center;
+    .hero-inner {
+      width: 100%;
+    }
 
-  padding: 70px 0;
-}
+    .eyebrow {
+      color: var(--muted);
 
-.hero-label {
-  color: #666;
-  font-size: 9px;
-  letter-spacing: 4px;
-  margin-bottom: 25px;
-}
+      font-size: 9px;
+      font-weight: 500;
 
-.hero h1 {
-  font-size: clamp(70px, 15vw, 170px);
-  line-height: .8;
-  letter-spacing: -7px;
-  font-weight: 600;
-}
+      letter-spacing: 4px;
 
-.hero h1 span {
-  color: #555;
-}
+      margin-bottom: 25px;
+    }
 
-.hero-description {
-  max-width: 420px;
+    .hero h1 {
+      font-size: clamp(82px, 17vw, 205px);
 
-  margin-top: 42px;
+      line-height: .78;
 
-  color: #777;
+      font-weight: 600;
 
-  font-size: 13px;
-  line-height: 1.9;
-}
+      letter-spacing: -9px;
+    }
 
+    .hero h1 span {
+      color: #4a4a47;
+    }
 
-/* SECTION */
+    .hero-bottom {
+      display: flex;
 
-section {
-  padding: 120px 0;
-}
+      justify-content: space-between;
+      align-items: flex-end;
 
-.section-number {
-  color: #555;
-  font-size: 9px;
-  letter-spacing: 4px;
-  margin-bottom: 20px;
-}
+      margin-top: 55px;
+    }
 
-.section-title {
-  font-size: clamp(42px, 7vw, 85px);
-  line-height: .9;
-  letter-spacing: -3px;
-  font-weight: 600;
-}
+    .hero-intro {
+      width: min(430px, 100%);
 
+      color: #81817d;
 
-/* ABOUT */
+      font-size: 13px;
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-}
+      line-height: 1.9;
+    }
 
-.about-text {
-  color: #888;
-  font-size: 14px;
-  line-height: 2;
-  padding-top: 8px;
-}
+    .hero-scroll {
+      color: #4e4e4b;
 
-.quote {
-  margin-top: 70px;
+      font-size: 8px;
 
-  border-top: 1px solid #202020;
-  border-bottom: 1px solid #202020;
+      letter-spacing: 3px;
+    }
 
-  padding: 35px 0;
+    /* ---------------- SECTION ---------------- */
 
-  font-family: "Playfair Display", serif;
+    section {
+      padding: 145px 0;
 
-  font-size: clamp(23px, 4vw, 38px);
-  line-height: 1.4;
-}
+      border-top: 1px solid var(--line);
+    }
 
-.quote small {
-  display: block;
+    .section-head {
+      display: flex;
 
-  margin-top: 18px;
+      justify-content: space-between;
+      align-items: flex-start;
 
-  color: #555;
+      margin-bottom: 65px;
+    }
 
-  font-family: Inter, sans-serif;
+    .section-number {
+      color: #4d4d4a;
 
-  font-size: 8px;
-  letter-spacing: 3px;
-}
+      font-size: 8px;
 
+      letter-spacing: 3px;
+    }
 
-/* SETUP */
+    .section-title {
+      font-size: clamp(45px, 7vw, 90px);
 
-.setup-grid {
-  margin-top: 55px;
+      line-height: .9;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+      letter-spacing: -4px;
 
-  border-top: 1px solid #202020;
-}
+      font-weight: 600;
+    }
 
-.setup-card {
-  padding: 35px 25px;
+    /* ---------------- PROFILE ---------------- */
 
-  border-right: 1px solid #202020;
-}
+    .profile-grid {
+      display: grid;
 
-.setup-card:last-child {
-  border-right: none;
-}
+      grid-template-columns: 1fr 1fr;
 
-.setup-number {
-  color: #555;
-  font-size: 9px;
-  letter-spacing: 2px;
-  margin-bottom: 45px;
-}
+      gap: 110px;
+    }
 
-.setup-card h3 {
-  font-size: 20px;
-  font-weight: 500;
-}
+    .profile-large {
+      font-size: clamp(25px, 3vw, 39px);
 
-.setup-card p {
-  margin-top: 9px;
+      line-height: 1.3;
 
-  color: #555;
+      font-weight: 500;
+    }
 
-  font-size: 9px;
-  letter-spacing: 2px;
-}
+    .profile-large span {
+      color: #656561;
+    }
 
+    .profile-copy {
+      color: #858581;
 
-/* MUSIC */
+      font-size: 13px;
 
-.music-list {
-  margin-top: 55px;
+      line-height: 2;
+    }
 
-  border-top: 1px solid #202020;
-}
+    .profile-copy p + p {
+      margin-top: 24px;
+    }
 
-.music-item {
-  display: flex;
+    .quote {
+      margin-top: 80px;
 
-  align-items: center;
-  justify-content: space-between;
+      padding: 45px 0;
 
-  padding: 28px 5px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
-  border-bottom: 1px solid #202020;
+      font-family: "Playfair Display", serif;
 
-  transition: .25s;
-}
+      font-size: clamp(24px, 4vw, 43px);
 
-.music-item:hover {
-  padding-left: 15px;
-  padding-right: 15px;
-  background: #0d0d0d;
-}
+      line-height: 1.35;
+    }
 
-.music-name {
-  font-size: 25px;
-  font-weight: 500;
-}
+    .quote small {
+      display: block;
 
-.music-type {
-  margin-top: 7px;
+      margin-top: 20px;
 
-  color: #555;
+      color: #4d4d4a;
 
-  font-size: 8px;
-  letter-spacing: 2px;
-}
+      font-family: "DM Sans", sans-serif;
 
-.arrow {
-  color: #555;
-  font-size: 18px;
-}
+      font-size: 8px;
 
+      letter-spacing: 3px;
+    }
 
-/* END */
+    /* ---------------- AUDIO SETUP ---------------- */
 
-.end {
-  min-height: 65vh;
+    .setup-grid {
+      display: grid;
 
-  display: flex;
-  align-items: center;
-}
+      grid-template-columns: repeat(3, 1fr);
 
-.end-text {
-  font-size: clamp(45px, 8vw, 100px);
-  line-height: .95;
-  letter-spacing: -4px;
-}
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
 
-.end-text span {
-  color: #555;
-}
+    .setup-card {
+      min-height: 340px;
 
+      padding: 30px;
 
-/* FOOTER */
+      position: relative;
 
-footer {
-  border-top: 1px solid #181818;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
-  padding: 25px 0 40px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.025),
+          transparent 55%
+        );
 
-  display: flex;
-  justify-content: space-between;
+      transition:
+        background .3s ease,
+        transform .3s ease;
+    }
 
-  color: #444;
+    .setup-card:hover {
+      background: #10100f;
+      transform: translateY(-3px);
+    }
 
-  font-size: 8px;
-  letter-spacing: 2px;
-}
+    .setup-index {
+      color: #494946;
 
+      font-size: 8px;
 
-/* MOBILE */
+      letter-spacing: 3px;
+    }
 
-@media (max-width: 700px) {
+    .setup-category {
+      position: absolute;
 
-  .container {
-    width: 88%;
-  }
+      left: 30px;
+      bottom: 80px;
 
-  nav {
-    height: 75px;
-  }
+      color: #555551;
 
-  .nav-links {
-    gap: 13px;
-  }
+      font-size: 8px;
 
-  .nav-links a {
-    font-size: 7px;
-  }
+      letter-spacing: 3px;
+    }
 
-  .hero {
-    min-height: 70vh;
-  }
+    .setup-name {
+      position: absolute;
 
-  .hero h1 {
-    letter-spacing: -4px;
-  }
+      left: 30px;
+      bottom: 34px;
 
-  section {
-    padding: 90px 0;
-  }
+      font-size: 23px;
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
+      font-weight: 500;
+    }
 
-  .setup-grid {
-    grid-template-columns: 1fr;
-  }
+    /* ---------------- MUSIC ---------------- */
 
-  .setup-card {
-    border-right: none;
-    border-bottom: 1px solid #202020;
-    padding: 30px 5px;
-  }
+    .music-intro {
+      max-width: 520px;
 
-  .setup-card:last-child {
-    border-bottom: none;
-  }
+      color: #777773;
 
-  .setup-number {
-    margin-bottom: 25px;
-  }
+      font-size: 13px;
 
-  .music-name {
-    font-size: 20px;
-  }
+      line-height: 1.9;
 
-  footer {
-    gap: 15px;
-    flex-direction: column;
-  }
-}
-</style>
+      margin-bottom: 60px;
+    }
+
+    .platform-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .platform {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 32px 8px;
+
+      border-bottom: 1px solid var(--line);
+
+      transition:
+        padding .3s ease,
+        background .3s ease;
+    }
+
+    .platform:hover {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      background: #0c0c0b;
+    }
+
+    .platform-left {
+      display: flex;
+      align-items: baseline;
+      gap: 22px;
+    }
+
+    .platform-name {
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .platform-type {
+      color: #555552;
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+    }
+
+    .platform-arrow {
+      color: #555552;
+
+      font-size: 17px;
+    }
+
+    /* ---------------- PHILOSOPHY ---------------- */
+
+    .philosophy {
+      min-height: 75vh;
+
+      display: flex;
+
+      align-items: center;
+    }
+
+    .philosophy-inner {
+      width: 100%;
+    }
+
+    .philosophy-label {
+      color: #4e4e4b;
+
+      font-size: 8px;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 35px;
+    }
+
+    .philosophy h2 {
+      max-width: 950px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(48px, 8vw, 105px);
+
+      font-weight: 500;
+
+      line-height: 1.02;
+
+      letter-spacing: -3px;
+    }
+
+    .philosophy h2 em {
+      color: #555552;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer {
+      padding: 30px 0 45px;
+
+      border-top: 1px solid var(--line);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      color: #464643;
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+    }
+
+    /* ---------------- MOBILE ---------------- */
+
+    @media (max-width: 720px) {
+
+      .page {
+        width: 88%;
+      }
+
+      nav {
+        height: 76px;
+      }
+
+      .nav-right {
+        gap: 14px;
+      }
+
+      .available {
+        display: none;
+      }
+
+      .nav-right a {
+        font-size: 7px;
+      }
+
+      .hero {
+        min-height: 70vh;
+
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        font-size: 25vw;
+
+        letter-spacing: -5px;
+      }
+
+      .hero-bottom {
+        display: block;
+
+        margin-top: 40px;
+      }
+
+      .hero-scroll {
+        margin-top: 30px;
+      }
+
+      section {
+        padding: 95px 0;
+      }
+
+      .section-head {
+        margin-bottom: 45px;
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .quote {
+        margin-top: 55px;
+      }
+
+      .setup-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .setup-card {
+        min-height: 250px;
+      }
+
+      .platform-left {
+        gap: 10px;
+      }
+
+      .platform-name {
+        font-size: 21px;
+      }
+
+      .platform-type {
+        display: none;
+      }
+
+      .philosophy {
+        min-height: 60vh;
+      }
+
+      .philosophy h2 {
+        letter-spacing: -1.5px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 14px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
-<nav>
-  <div class="logo">LUXX</div>
+  <!-- NAVIGATION -->
 
-  <div class="nav-links">
-    <a href="#about">ABOUT</a>
-    <a href="#setup">SETUP</a>
-    <a href="#music">MUSIC</a>
-  </div>
-</nav>
+  <nav>
 
-
-<!-- HERO -->
-
-<header class="hero">
-
-  <div>
-
-    <div class="hero-label">
-      PERSONAL AUDIO · 2026
+    <div class="brand">
+      LUXX
     </div>
 
-    <h1>
-      L<span>U</span>XX
-    </h1>
+    <div class="nav-right">
 
-    <p class="hero-description">
-      A quiet space for music, sound,
-      and the pursuit of better listening.
+      <div class="available">
+        <div class="available-dot"></div>
+        PERSONAL AUDIO
+      </div>
+
+      <a href="#profile">
+        PROFILE
+      </a>
+
+      <a href="#setup">
+        SETUP
+      </a>
+
+      <a href="#music">
+        MUSIC
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        PERSONAL PORTFOLIO · 2026
+      </div>
+
+      <h1>
+        LU<span>XX</span>
+      </h1>
+
+      <div class="hero-bottom">
+
+        <p class="hero-intro">
+          Music, sound and the pursuit of a better
+          listening experience. A personal archive of
+          what I listen to and the gear I use.
+        </p>
+
+        <div class="hero-scroll">
+          SCROLL TO EXPLORE ↓
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- PROFILE -->
+
+  <section id="profile">
+
+    <div class="section-head">
+
+      <div class="section-number">
+        01 / PROFILE
+      </div>
+
+    </div>
+
+    <div class="profile-grid">
+
+      <div class="profile-large">
+
+        I listen to music
+        <span>carefully.</span>
+
+        <br><br>
+
+        Not just for the sound,
+        but for everything
+        it makes me feel.
+
+      </div>
+
+
+      <div class="profile-copy">
+
+        <p>
+          Welcome to LUXX — a small personal
+          space built around music and audio.
+        </p>
+
+        <p>
+          I enjoy discovering different artists,
+          exploring streaming platforms and
+          experimenting with personal audio gear.
+        </p>
+
+        <p>
+          The goal is simple:
+          <strong>less noise, better music.</strong>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="quote">
+
+      “Music is the end game.”
+
+      <small>
+        LUXX · PERSONAL AUDIO
+      </small>
+
+    </div>
+
+  </section>
+
+
+  <!-- SETUP -->
+
+  <section id="setup">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="section-number">
+          02 / AUDIO
+        </div>
+
+        <h2 class="section-title">
+          MY<br>
+          SETUP
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="setup-grid">
+
+
+      <article class="setup-card">
+
+        <div class="setup-index">
+          01
+        </div>
+
+        <div class="setup-category">
+          IN-EAR MONITOR
+        </div>
+
+        <div class="setup-name">
+          Kiwi Ears Belle
+        </div>
+
+      </article>
+
+
+      <article class="setup-card">
+
+        <div class="setup-index">
+          02
+        </div>
+
+        <div class="setup-category">
+          USB DAC
+        </div>
+
+        <div class="setup-name">
+          JM7
+        </div>
+
+      </article>
+
+
+      <article class="setup-card">
+
+        <div class="setup-index">
+          03
+        </div>
+
+        <div class="setup-category">
+          MUSIC PLAYER
+        </div>
+
+        <div class="setup-name">
+          UAPP
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- MUSIC -->
+
+  <section id="music">
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="section-number">
+          03 / MUSIC
+        </div>
+
+        <h2 class="section-title">
+          WHERE I<br>
+          LISTEN
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <p class="music-intro">
+
+      Different platforms, different libraries,
+      same reason — finding music worth listening to.
+
     </p>
 
-  </div>
 
-</header>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-  <div class="section-number">
-    01 / ABOUT
-  </div>
-
-  <div class="about-grid">
-
-    <h2 class="section-title">
-      MUSIC<br>
-      FIRST.
-    </h2>
-
-    <div class="about-text">
-
-      <p>
-        Music has always been more than
-        background noise.
-      </p>
-
-      <br>
-
-      <p>
-        Every piece of the setup exists
-        for one purpose — to get closer
-        to the music itself.
-      </p>
-
-    </div>
-
-  </div>
-
-  <div class="quote">
-    “Music is the end game.”
-
-    <small>
-      LUXX · PERSONAL AUDIO
-    </small>
-  </div>
-
-</section>
+    <div class="platform-list">
 
 
-<!-- SETUP -->
+      <a
+        class="platform"
+        href="https://tidal.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
 
-<section id="setup">
+        <div class="platform-left">
 
-  <div class="section-number">
-    02 / END GAME SETUP
-  </div>
+          <div class="platform-name">
+            TIDAL
+          </div>
 
-  <h2 class="section-title">
-    THE<br>
-    CHAIN.
-  </h2>
+          <div class="platform-type">
+            HIGH FIDELITY STREAMING
+          </div>
 
-  <div class="setup-grid">
-
-    <div class="setup-card">
-
-      <div class="setup-number">
-        01 / IEM
-      </div>
-
-      <h3>
-        Kiwi Ears Belle
-      </h3>
-
-      <p>
-        IN-EAR MONITOR
-      </p>
-
-    </div>
-
-
-    <div class="setup-card">
-
-      <div class="setup-number">
-        02 / DAC
-      </div>
-
-      <h3>
-        JM7
-      </h3>
-
-      <p>
-        USB DAC
-      </p>
-
-    </div>
-
-
-    <div class="setup-card">
-
-      <div class="setup-number">
-        03 / PLAYER
-      </div>
-
-      <h3>
-        UAPP
-      </h3>
-
-      <p>
-        USB AUDIO PLAYER PRO
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- MUSIC -->
-
-<section id="music">
-
-  <div class="section-number">
-    03 / MUSIC
-  </div>
-
-  <h2 class="section-title">
-    SOURCES.
-  </h2>
-
-  <div class="music-list">
-
-    <a
-      class="music-item"
-      href="https://tidal.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <div>
-        <div class="music-name">TIDAL</div>
-
-        <div class="music-type">
-          LOSSLESS · HIGH FIDELITY
         </div>
-      </div>
 
-      <div class="arrow">↗</div>
-
-    </a>
-
-
-    <a
-      class="music-item"
-      href="https://www.qobuz.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <div>
-        <div class="music-name">QOBUZ</div>
-
-        <div class="music-type">
-          HI-RES · STUDIO QUALITY
+        <div class="platform-arrow">
+          ↗
         </div>
-      </div>
 
-      <div class="arrow">↗</div>
-
-    </a>
+      </a>
 
 
-    <a
-      class="music-item"
-      href="https://open.spotify.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+      <a
+        class="platform"
+        href="https://www.qobuz.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
 
-      <div>
-        <div class="music-name">SPOTIFY</div>
+        <div class="platform-left">
 
-        <div class="music-type">
-          DAILY LISTENING
+          <div class="platform-name">
+            QOBUZ
+          </div>
+
+          <div class="platform-type">
+            HI-RES MUSIC
+          </div>
+
         </div>
-      </div>
 
-      <div class="arrow">↗</div>
+        <div class="platform-arrow">
+          ↗
+        </div>
 
-    </a>
-
-  </div>
-
-</section>
+      </a>
 
 
-<!-- END -->
+      <a
+        class="platform"
+        href="https://open.spotify.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
 
-<section class="end">
+        <div class="platform-left">
 
-  <div>
+          <div class="platform-name">
+            SPOTIFY
+          </div>
 
-    <div class="section-number">
-      04 / END
+          <div class="platform-type">
+            EVERYDAY LISTENING
+          </div>
+
+        </div>
+
+        <div class="platform-arrow">
+          ↗
+        </div>
+
+      </a>
+
+
     </div>
 
-    <div class="end-text">
-      JUST<br>
-      <span>LISTEN.</span>
+  </section>
+
+
+  <!-- PHILOSOPHY -->
+
+  <section class="philosophy">
+
+    <div class="philosophy-inner">
+
+      <div class="philosophy-label">
+        04 / PHILOSOPHY
+      </div>
+
+      <h2>
+        Find the music.
+        <em>Forget the noise.</em>
+      </h2>
+
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<footer>
+  <!-- FOOTER -->
 
-  <div>LUXX</div>
+  <footer>
 
-  <div>
-    KIWI EARS BELLE × JM7 × UAPP
-  </div>
+    <div>
+      LUXX
+    </div>
 
-  <div>
-    © 2026
-  </div>
+    <div>
+      KIWI EARS BELLE · JM7 · UAPP
+    </div>
 
-</footer>
+    <div>
+      © 2026
+    </div>
+
+  </footer>
 
 </div>
 
