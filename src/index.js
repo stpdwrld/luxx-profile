@@ -1,6 +1,7 @@
 export default {
   async fetch(request) {
-    const html = `<!DOCTYPE html>
+    const html = `
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -120,9 +121,17 @@ img{display:block;max-width:100%}
 .card .type{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-left:8px}
 .card h3{font-family:var(--serif);font-weight:400;font-size:25px;margin:20px 0 10px}
 .product-image{
-  position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);
-  width:86%;height:150px;object-fit:contain;filter:grayscale(1) contrast(1.1);
-  opacity:.9;
+  position:absolute;
+  z-index:1;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:82%;
+  height:68%;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:grayscale(1) contrast(1.05);
+  opacity:.94;
 }
 
 .platforms{padding:38px 5px 45px;display:grid;gap:9px}
@@ -139,7 +148,33 @@ img{display:block;max-width:100%}
 .logo.tidal{border-radius:0;background:transparent;color:#eee;font-size:23px}
 .platform-name{font-size:16px;letter-spacing:.06em}
 .platform-desc{text-align:right;color:#777;font-size:12px}
-.ext{font-size:19px;color:#999}
+.ext{
+  width:30px;height:30px;
+  display:grid;place-items:center;
+  color:#aaa;
+  border:1px solid rgba(255,255,255,.22);
+  transition:.25s ease;
+}
+.ext i{
+  width:9px;height:9px;
+  display:block;
+  border-top:1px solid currentColor;
+  border-right:1px solid currentColor;
+  position:relative;
+}
+.ext i:after{
+  content:"";
+  position:absolute;
+  width:10px;height:1px;
+  background:currentColor;
+  transform:rotate(-45deg);
+  transform-origin:right center;
+  right:-2px;top:2px;
+}
+.ext:hover{
+  color:#fff;
+  border-color:rgba(255,255,255,.55);
+}
 
 .roblox-box{
   margin:15px 0 42px 5px;border:1px solid var(--line);min-height:170px;
@@ -219,174 +254,221 @@ footer{
 }
 
 
-/* --- Mobile refinement --- */
-@media (max-width: 800px){
-  body{overflow-x:hidden}
-  .container{width:100%}
+
+/* =========================================================
+   LUXX — Responsive Editorial System
+   Same visual language on desktop + mobile
+   ========================================================= */
+
+html{
+  width:100%;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+body{
+  width:100%;
+  min-width:0;
+  overflow-x:hidden;
+}
+*,*::before,*::after{
+  min-width:0;
+}
+img{
+  max-width:100%;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+
+/* Desktop proportions */
+.hero{
+  min-height:min(760px,100vh);
+  grid-template-columns:minmax(340px,42%) minmax(0,58%);
+}
+.hero-image{
+  min-height:min(760px,100vh);
+  background-position:center 12%;
+}
+.hero-content{
+  padding:clamp(100px,11vw,145px) clamp(38px,5.5vw,90px) 70px;
+}
+.hero h1{
+  font-size:clamp(76px,9vw,150px);
+}
+.row{
+  grid-template-columns:clamp(150px,18vw,210px) minmax(0,1fr);
+}
+.profile{
+  padding:clamp(38px,4vw,55px) clamp(5px,2vw,25px);
+}
+.setup-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.card{
+  aspect-ratio:1 / .88;
+  min-height:0;
+}
+.card h3{
+  position:relative;
+  z-index:2;
+}
+.roblox-box{
+  grid-template-columns:minmax(220px,30%) minmax(0,1fr);
+}
+.roblox-art{
+  aspect-ratio:1 / 1;
+  min-height:0;
+}
+.quote{
+  grid-template-columns:clamp(150px,18vw,210px) minmax(0,1fr);
+}
+
+/* Medium screens */
+@media (max-width:1050px){
+  .nav{gap:24px}
+  .hero h1{font-size:clamp(72px,10vw,110px)}
+  .profile h2,.quote h2{font-size:36px}
+  .setup-grid{gap:12px}
+  .card{padding:18px}
+  .card h3{font-size:22px}
+}
+
+/* Phone: preserve the desktop composition instead of redesigning it */
+@media (max-width:800px){
   .topbar{
-    position:absolute;
     padding:20px 18px;
-    align-items:flex-start;
   }
-  .brand{font-size:15px;letter-spacing:.38em}
+  .brand{font-size:14px}
   .nav{
-    gap:13px;
+    gap:12px;
     font-size:8px;
-    letter-spacing:.08em;
-    flex-wrap:wrap;
-    justify-content:flex-end;
     max-width:245px;
   }
   .nav a:nth-child(n+4){display:none}
 
-  .hero{grid-template-columns:1fr;min-height:780px}
-  .hero-image{
-    min-height:430px;
-    background-position:center 15%;
-  }
-  .hero-content{
-    min-height:350px;
-    padding:52px 24px 55px;
-  }
-  .hero h1{
-    font-size:76px;
-    margin:18px 0 20px;
-  }
-  .hero-copy{font-size:14px;line-height:1.7}
-  .scroll{margin-top:27px}
-
-  .row{
-    grid-template-columns:94px minmax(0,1fr);
+  .hero{
+    grid-template-columns:1fr;
     min-height:0;
   }
+  .hero-image{
+    min-height:clamp(360px,58vw,470px);
+    background-position:center 12%;
+  }
+  .hero-content{
+    min-height:0;
+    padding:clamp(48px,9vw,72px) 7vw clamp(48px,9vw,70px);
+  }
+  .hero h1{
+    font-size:clamp(70px,18vw,100px);
+    margin:20px 0;
+  }
+  .hero-copy{font-size:14px}
+
+  .row{
+    grid-template-columns:clamp(78px,24vw,145px) minmax(0,1fr);
+  }
   .row-label{
-    padding:39px 7px 30px 6px;
+    padding:36px 8px 30px 6px;
   }
   .row-title{
-    font-size:11px;
-    line-height:1.55;
-    letter-spacing:.12em;
-    word-break:normal;
+    font-size:10px;
+    line-height:1.5;
   }
   .num{font-size:10px}
-  .dash{margin-top:18px}
 
-  /* Audio cards: no overlap between heading and image */
-  .setup-grid{
-    display:grid;
+  .profile{
     grid-template-columns:1fr;
-    gap:20px;
-    padding:28px 10px 36px 0;
+    gap:26px;
+    padding:38px 12px 42px 0;
+  }
+  .profile h2{font-size:clamp(30px,8vw,40px)}
+  .profile p{font-size:13px}
+
+  .setup-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:28px 10px 38px 0;
   }
   .card{
-    min-height:360px;
-    padding:22px 20px 0;
+    aspect-ratio:1 / .82;
+    min-height:0;
+    padding:20px;
   }
   .card h3{
-    position:relative;
-    z-index:2;
-    font-size:29px;
-    margin:18px 0 0;
-    line-height:1.05;
-    white-space:normal;
+    font-size:clamp(24px,6.8vw,31px);
+    margin-top:17px;
+    line-height:1;
   }
-  .card .index,.card .type{position:relative;z-index:3}
   .product-image{
-    position:absolute;
-    z-index:1;
-    width:82%;
-    height:auto;
-    aspect-ratio:1/1;
-    left:50%;
-    bottom:-2px;
-    transform:translateX(-50%);
-    object-fit:contain;
+    width:78%;
+    height:69%;
+    bottom:0;
   }
 
   .platforms{
-    padding:28px 10px 36px 0;
-    gap:10px;
+    padding:28px 10px 38px 0;
   }
   .platform{
-    grid-template-columns:45px minmax(0,1fr) 25px;
-    min-height:62px;
-    padding:0 13px;
+    grid-template-columns:44px minmax(0,1fr) 34px;
+    min-height:60px;
+    padding:0 12px;
   }
   .platform-desc{display:none}
   .platform-name{font-size:14px}
-  .image-logo img{width:29px;height:29px}
   .ext{
-    display:grid;
-    place-items:center;
-    width:28px;
-    height:28px;
-    border:1px solid #444;
-    font-size:15px;
-    text-decoration:none;
+    width:27px;
+    height:27px;
   }
 
   .roblox-box{
     grid-template-columns:1fr;
-    margin:28px 10px 36px 0;
-    min-height:0;
+    margin:28px 10px 38px 0;
   }
   .roblox-art{
+    aspect-ratio:1 / 1;
+    width:100%;
     height:auto;
-    aspect-ratio:1/1;
-    background-size:cover;
-    background-position:center;
   }
-  .roblox-info{padding:27px 22px 28px}
-  .roblox-name{font-size:34px}
-  .roblox-meta{font-size:13px;margin:9px 0 18px}
-  .roblox-desc{font-size:14px;line-height:1.65}
+  .roblox-info{padding:26px 20px 28px}
+  .roblox-name{font-size:clamp(29px,8vw,36px)}
+  .roblox-desc{font-size:13px}
   .button{
     float:none;
-    margin:24px 0 0;
+    margin-top:22px;
     width:100%;
     justify-content:center;
-    padding:14px 10px;
   }
 
   .quote{
-    grid-template-columns:94px minmax(0,1fr);
-    min-height:225px;
+    grid-template-columns:clamp(78px,24vw,145px) minmax(0,1fr);
+    min-height:190px;
   }
-  .quote-content{
-    padding:42px 10px 42px 0;
-  }
-  .quote h2{
-    font-size:34px;
-    line-height:1.08;
-    position:relative;
-    z-index:2;
-  }
-  .wave{
-    width:85%;
-    right:-20px;
-    opacity:.2;
-  }
+  .quote-content{padding:38px 10px 38px 0}
+  .quote h2{font-size:clamp(29px,7.8vw,40px)}
+  .wave{width:82%;right:-10px}
 
   footer{
-    width:100%;
-    padding:24px 27px;
-    min-height:76px;
+    padding:24px 5vw;
+    gap:10px;
     font-size:8px;
-    gap:12px;
-  }
-  .footer-center{
-    text-align:center;
-    line-height:1.5;
   }
 }
 
-/* Prevent text/image selection from feeling like a navigation action */
-.platform .platform-name,
-.platform .platform-desc,
-.card h3,
-.row-title,
-.quote h2{
-  cursor:default;
+/* Small phones */
+@media (max-width:420px){
+  .nav{max-width:205px}
+  .nav a{font-size:7.5px}
+  .hero-image{min-height:380px}
+  .card{aspect-ratio:1 / .86}
+  .platform{grid-template-columns:39px minmax(0,1fr) 31px}
+  .platform-name{font-size:13px}
+  footer{font-size:7px}
+}
+
+/* Avoid layout jumps when browser zoom / dynamic text sizing changes */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
 }
 
 </style>
@@ -438,17 +520,17 @@ footer{
     <article class="card">
       <span class="index">01</span><span class="type">IEM</span>
       <h3>Kiwi Ears Belle</h3>
-      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/iem.jpg" alt="IEM">
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/iem.png" alt="IEM">
     </article>
     <article class="card">
       <span class="index">02</span><span class="type">DAC</span>
       <h3>JM7</h3>
-      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac.jpg" alt="Audio DAC">
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac.png" alt="Audio DAC">
     </article>
     <article class="card">
       <span class="index">03</span><span class="type">Player</span>
       <h3>UAPP</h3>
-      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/uapp.jpg" alt="Music player">
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/uapp.png" alt="Music player">
     </article>
   </div>
 </section>
@@ -460,15 +542,15 @@ footer{
   <div class="platforms">
     <div class="platform">
       <span class="logo image-logo"><img src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/tidal.png" alt="TIDAL"></span><span class="platform-name">TIDAL</span>
-      <span class="platform-desc">High Fidelity Streaming.</span><a class="ext" href="https://tidal.com" target="_blank" rel="noopener" aria-label="Open TIDAL">↗</a>
+      <span class="platform-desc">High Fidelity Streaming.</span><a class="ext" href="https://tidal.com" target="_blank" rel="noopener" aria-label="Open TIDAL"><i></i></a>
     </div>
     <div class="platform">
       <span class="logo image-logo"><img src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/qobuz.png" alt="Qobuz"></span><span class="platform-name">QOBUZ</span>
-      <span class="platform-desc">Hi-Res. Studio Quality.</span><a class="ext" href="https://www.qobuz.com" target="_blank" rel="noopener" aria-label="Open Qobuz">↗</a>
+      <span class="platform-desc">Hi-Res. Studio Quality.</span><a class="ext" href="https://www.qobuz.com" target="_blank" rel="noopener" aria-label="Open Qobuz"><i></i></a>
     </div>
     <div class="platform">
       <span class="logo image-logo"><img src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/spotify.png" alt="Spotify"></span><span class="platform-name">SPOTIFY</span>
-      <span class="platform-desc">Everyday Listening.</span><a class="ext" href="https://open.spotify.com" target="_blank" rel="noopener" aria-label="Open Spotify">↗</a>
+      <span class="platform-desc">Everyday Listening.</span><a class="ext" href="https://open.spotify.com" target="_blank" rel="noopener" aria-label="Open Spotify"><i></i></a>
     </div>
   </div>
 </section>
@@ -505,16 +587,7 @@ footer{
   <span>© 2026</span>
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Only explicit buttons/icons should open external pages.
-  document.querySelectorAll('.platform').forEach(row => {
-    row.addEventListener('click', e => {
-      if (!e.target.closest('a')) e.preventDefault();
-    });
-  });
-});
-</script>
+
 
 </body>
 </html>
