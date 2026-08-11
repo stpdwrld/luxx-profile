@@ -3,19 +3,21 @@ export default {
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LUXX — Audiophile</title>
+<title>LUXX — Music Is The End Game</title>
 
-<meta
-  name="description"
-  content="LUXX — Music is the end game."
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
 >
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500&display=swap');
 
 * {
   margin: 0;
@@ -23,408 +25,439 @@ export default {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  min-height: 100vh;
-
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(255,255,255,.08),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 10% 90%,
-      rgba(255,255,255,.035),
-      transparent 25%
-    ),
-    #050505;
-
+  background: #030508;
   color: #f5f5f5;
-
   font-family: Inter, sans-serif;
-
   overflow-x: hidden;
 }
 
-
-/* Ambient glow */
-
 body::before {
   content: "";
-
   position: fixed;
+  inset: 0;
 
-  width: 500px;
-  height: 500px;
-
-  background: rgba(255,255,255,.025);
-
-  filter: blur(120px);
-
-  border-radius: 50%;
-
-  top: -250px;
-  left: 50%;
-
-  transform: translateX(-50%);
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(0,120,255,.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 70%,
+      rgba(0,50,100,.10),
+      transparent 35%
+    );
 
   pointer-events: none;
+  z-index: -1;
 }
 
 
-/* MAIN */
+/* NAV */
 
-.container {
+nav {
+  position: fixed;
 
-  width: min(900px, 92%);
+  top: 0;
+  left: 0;
 
-  margin: auto;
+  width: 100%;
 
-  padding: 70px 0 50px;
-
-}
-
-
-/* TOP NAV */
-
-.nav {
+  padding: 24px 6%;
 
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
 
-  margin-bottom: 80px;
+  z-index: 100;
 
+  background: linear-gradient(
+    to bottom,
+    rgba(3,5,8,.9),
+    transparent
+  );
+
+  backdrop-filter: blur(8px);
 }
 
 .logo {
-
-  font-size: 14px;
-
-  font-weight: 700;
-
+  font-size: 18px;
+  font-weight: 800;
   letter-spacing: 6px;
-
 }
 
-.status {
+.navlinks {
+  display: flex;
+  gap: 28px;
+}
 
-  font-size: 10px;
-
+.navlinks a {
   color: #777;
+  text-decoration: none;
+
+  font-size: 9px;
+  font-weight: 600;
 
   letter-spacing: 2px;
 
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
+  transition: .3s;
 }
 
-.dot {
+.navlinks a:hover {
+  color: white;
+}
 
-  width: 6px;
-  height: 6px;
 
-  border-radius: 50%;
+/* GENERAL */
 
-  background: #ddd;
+section {
+  width: 88%;
+  max-width: 1200px;
 
-  box-shadow: 0 0 10px #fff;
+  margin: auto;
+}
 
+.label {
+  color: #666;
+
+  font-size: 9px;
+  letter-spacing: 4px;
+
+  margin-bottom: 18px;
+}
+
+.bigtitle {
+  font-family: Anton, sans-serif;
+
+  font-size: clamp(
+    55px,
+    10vw,
+    150px
+  );
+
+  line-height: .85;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
 }
 
 
 /* HERO */
 
 .hero {
-
-  text-align: center;
-
-  margin-bottom: 70px;
-
-}
-
-.avatar {
-
-  width: 96px;
-  height: 96px;
-
-  margin: auto;
-
-  border-radius: 50%;
+  min-height: 100vh;
 
   display: flex;
-
   align-items: center;
-  justify-content: center;
 
-  font-size: 25px;
+  position: relative;
 
-  font-weight: 700;
+  padding-top: 80px;
+}
+
+.hero-content {
+  width: 100%;
+}
+
+.hero-small {
+  color: #888;
+
+  font-size: 10px;
 
   letter-spacing: 5px;
 
-  color: #fff;
-
-  background:
-    linear-gradient(
-      145deg,
-      #242424,
-      #080808
-    );
-
-  border: 1px solid #333;
-
-  box-shadow:
-    0 0 0 8px rgba(255,255,255,.015),
-    0 20px 60px rgba(0,0,0,.8);
-
   margin-bottom: 25px;
-
 }
-
 
 .hero h1 {
+  font-family: Anton, sans-serif;
 
-  font-size: clamp(42px, 8vw, 72px);
+  font-size: clamp(
+    90px,
+    20vw,
+    260px
+  );
 
-  letter-spacing: 12px;
+  line-height: .75;
 
-  font-weight: 600;
+  letter-spacing: -3px;
 
-  margin-bottom: 15px;
-
+  color: #f5f5f5;
 }
 
+.hero h1 span {
+  color: #202b38;
+  -webkit-text-stroke: 1px #526273;
+}
 
-.subtitle {
+.hero-bottom {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: end;
+
+  margin-top: 45px;
+}
+
+.hero-description {
+  max-width: 430px;
 
   color: #777;
 
-  font-size: 11px;
+  font-size: 12px;
 
-  letter-spacing: 5px;
+  line-height: 1.8;
+}
 
-  text-transform: uppercase;
+.scroll {
+  color: #555;
 
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+
+/* ABOUT */
+
+.about {
+  padding: 150px 0;
+}
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1.4fr;
+
+  gap: 80px;
+
+  align-items: start;
+}
+
+.about-text {
+  color: #888;
+
+  font-size: 14px;
+
+  line-height: 2;
+}
+
+.about-text strong {
+  color: white;
 }
 
 
 /* QUOTE */
 
 .quote {
+  margin-top: 60px;
 
-  margin: 45px auto 0;
+  padding: 35px 0;
 
-  max-width: 600px;
+  border-top: 1px solid #18202a;
+  border-bottom: 1px solid #18202a;
 
-  font-family:
-    "Playfair Display",
-    serif;
+  font-family: Georgia, serif;
 
-  font-size: clamp(21px, 4vw, 29px);
+  font-size: clamp(
+    24px,
+    4vw,
+    48px
+  );
 
-  font-style: italic;
+  line-height: 1.25;
 
-  color: #d8d8d8;
-
-  line-height: 1.5;
-
+  color: #ddd;
 }
 
 .quote span {
-
   display: block;
 
-  margin-top: 15px;
+  margin-top: 18px;
 
   font-family: Inter, sans-serif;
 
-  font-size: 9px;
+  font-size: 8px;
 
-  font-style: normal;
-
-  letter-spacing: 3px;
+  letter-spacing: 4px;
 
   color: #555;
-
 }
 
 
-/* PLAYER CARD */
+/* SETUP */
 
-.player {
-
-  position: relative;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.075),
-      rgba(255,255,255,.025)
-    );
-
-  border: 1px solid rgba(255,255,255,.1);
-
-  border-radius: 28px;
-
-  padding: 30px;
-
-  backdrop-filter: blur(20px);
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.5);
-
-  margin-bottom: 18px;
-
+.setup {
+  padding: 100px 0;
 }
 
-
-.player-top {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 28px;
-
-}
-
-.now {
-
-  font-size: 9px;
-
-  letter-spacing: 3px;
-
-  color: #666;
-
-  text-transform: uppercase;
-
-}
-
-.quality {
-
-  border: 1px solid #333;
-
-  border-radius: 50px;
-
-  padding: 7px 12px;
-
-  font-size: 9px;
-
-  color: #aaa;
-
-  letter-spacing: 1px;
-
-}
-
-
-/* WAVEFORM */
-
-.wave {
-
-  height: 70px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 4px;
-
-  margin-bottom: 22px;
-
-}
-
-.bar {
-
-  width: 3px;
-
-  border-radius: 10px;
-
-  background: #aaa;
-
-  animation: wave 1.2s infinite ease-in-out;
-
-}
-
-.bar:nth-child(1){height:18px}
-.bar:nth-child(2){height:30px;animation-delay:.1s}
-.bar:nth-child(3){height:45px;animation-delay:.2s}
-.bar:nth-child(4){height:27px;animation-delay:.3s}
-.bar:nth-child(5){height:55px;animation-delay:.15s}
-.bar:nth-child(6){height:35px;animation-delay:.25s}
-.bar:nth-child(7){height:48px;animation-delay:.35s}
-.bar:nth-child(8){height:25px;animation-delay:.1s}
-.bar:nth-child(9){height:40px;animation-delay:.2s}
-.bar:nth-child(10){height:18px;animation-delay:.3s}
-.bar:nth-child(11){height:32px;animation-delay:.15s}
-.bar:nth-child(12){height:50px;animation-delay:.25s}
-.bar:nth-child(13){height:28px;animation-delay:.35s}
-
-@keyframes wave {
-
-  0%,100% {
-    transform: scaleY(.65);
-    opacity: .5;
-  }
-
-  50% {
-    transform: scaleY(1);
-    opacity: 1;
-  }
-
-}
-
-
-/* TRACK */
-
-.track {
-
+.setup-header {
   display: flex;
 
   justify-content: space-between;
 
   align-items: end;
 
+  margin-bottom: 45px;
 }
 
-.track-name {
+.setup-grid {
+  display: grid;
 
-  font-size: 17px;
+  grid-template-columns:
+    repeat(3, 1fr);
 
-  font-weight: 600;
-
+  gap: 14px;
 }
 
-.track-desc {
+.setup-card {
+  min-height: 300px;
 
-  margin-top: 7px;
+  padding: 30px;
+
+  border: 1px solid #17202a;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b1118,
+      #05070a
+    );
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: .4s;
+}
+
+.setup-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  background: rgba(0,130,255,.08);
+
+  filter: blur(70px);
+
+  right: -60px;
+  bottom: -60px;
+}
+
+.setup-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #35485b;
+}
+
+.number {
+  font-size: 9px;
+
+  color: #4d5c6b;
+
+  letter-spacing: 3px;
+}
+
+.setup-card h3 {
+  position: absolute;
+
+  left: 30px;
+  bottom: 55px;
+
+  font-family: Anton, sans-serif;
+
+  font-size: 38px;
+
+  letter-spacing: 1px;
+}
+
+.setup-card p {
+  position: absolute;
+
+  left: 30px;
+  bottom: 30px;
 
   color: #666;
 
-  font-size: 10px;
+  font-size: 9px;
 
-  letter-spacing: 1px;
-
+  letter-spacing: 2px;
 }
 
-.play {
 
-  width: 45px;
-  height: 45px;
+/* MUSIC */
 
-  border-radius: 50%;
+.music {
+  padding: 130px 0;
+}
 
-  border: 1px solid #444;
+.music-list {
+  margin-top: 45px;
+
+  border-top: 1px solid #18202a;
+}
+
+.music-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 30px 5px;
+
+  border-bottom: 1px solid #18202a;
+
+  text-decoration: none;
+
+  color: white;
+
+  transition: .3s;
+}
+
+.music-item:hover {
+  padding-left: 18px;
+
+  background: rgba(255,255,255,.015);
+}
+
+.music-name {
+  font-family: Anton, sans-serif;
+
+  font-size: 42px;
+
+  letter-spacing: 1px;
+}
+
+.music-desc {
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.arrow {
+  color: #555;
+
+  font-size: 20px;
+}
+
+
+/* END */
+
+.end {
+  min-height: 90vh;
 
   display: flex;
 
@@ -432,439 +465,509 @@ body::before {
 
   justify-content: center;
 
-  font-size: 13px;
+  text-align: center;
 
+  position: relative;
 }
 
+.end h2 {
+  font-family: Anton, sans-serif;
 
-/* GEAR */
+  font-size: clamp(
+    60px,
+    13vw,
+    180px
+  );
 
-.section-title {
+  line-height: .8;
 
-  color: #555;
+  letter-spacing: -2px;
+}
 
-  font-size: 9px;
+.end h2 span {
+  color: #26313d;
+}
+
+.end p {
+  margin-top: 35px;
+
+  color: #666;
+
+  font-size: 10px;
 
   letter-spacing: 4px;
-
-  margin: 35px 5px 13px;
-
-  text-transform: uppercase;
-
-}
-
-
-.gear {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 12px;
-
-}
-
-
-.card {
-
-  padding: 24px;
-
-  border-radius: 20px;
-
-  background: #0d0d0d;
-
-  border: 1px solid #1e1e1e;
-
-  transition: .25s;
-
-}
-
-.card:hover {
-
-  transform: translateY(-4px);
-
-  border-color: #444;
-
-  background: #111;
-
-}
-
-.card small {
-
-  display: block;
-
-  color: #555;
-
-  font-size: 8px;
-
-  letter-spacing: 3px;
-
-  margin-bottom: 12px;
-
-}
-
-.card strong {
-
-  font-size: 14px;
-
-  font-weight: 500;
-
-}
-
-
-/* SERVICES */
-
-.services {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 12px;
-
-}
-
-
-.service {
-
-  text-decoration: none;
-
-  color: #ddd;
-
-  padding: 20px;
-
-  border-radius: 18px;
-
-  border: 1px solid #1e1e1e;
-
-  background: #0b0b0b;
-
-  transition: .25s;
-
-}
-
-.service:hover {
-
-  background: #151515;
-
-  border-color: #444;
-
-  transform: translateY(-3px);
-
-}
-
-.service span {
-
-  display: block;
-
-  font-size: 8px;
-
-  color: #555;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 8px;
-
-}
-
-.service strong {
-
-  font-size: 14px;
-
 }
 
 
 /* FOOTER */
 
 footer {
+  padding: 35px 6%;
 
-  text-align: center;
+  border-top: 1px solid #111820;
 
-  margin-top: 70px;
+  display: flex;
+
+  justify-content: space-between;
 
   color: #444;
 
-  font-size: 9px;
+  font-size: 8px;
 
   letter-spacing: 3px;
-
 }
 
 
-@media(max-width:650px) {
+/* MOBILE */
 
-  .container {
-    padding-top: 40px;
+@media(max-width: 700px) {
+
+  nav {
+    padding: 20px 6%;
   }
 
-  .nav {
-    margin-bottom: 55px;
+  .navlinks {
+    gap: 12px;
   }
 
-  .gear,
-  .services {
-    grid-template-columns: 1fr;
+  .navlinks a {
+    font-size: 7px;
   }
 
   .hero h1 {
-    letter-spacing: 7px;
+    font-size: 25vw;
   }
 
-  .player {
-    padding: 22px;
+  .hero-bottom {
+    display: block;
+  }
+
+  .scroll {
+    margin-top: 30px;
+  }
+
+  .about {
+    padding: 100px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .setup {
+    padding: 80px 0;
+  }
+
+  .setup-header {
+    display: block;
+  }
+
+  .setup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .setup-card {
+    min-height: 240px;
+  }
+
+  .music {
+    padding: 80px 0;
+  }
+
+  .music-name {
+    font-size: 28px;
+  }
+
+  .music-item {
+    gap: 20px;
+  }
+
+  footer {
+    display: block;
+    line-height: 2;
   }
 
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
-<div class="container">
 
+<!-- NAV -->
 
-  <!-- NAV -->
+<nav>
 
-  <div class="nav">
+  <div class="logo">
+    LUXX
+  </div>
 
-    <div class="logo">
-      LX
-    </div>
+  <div class="navlinks">
 
-    <div class="status">
+    <a href="#profile">
+      PROFILE
+    </a>
 
-      <div class="dot"></div>
+    <a href="#setup">
+      SETUP
+    </a>
 
-      AUDIOPHILE MODE
+    <a href="#music">
+      MUSIC
+    </a>
 
-    </div>
+    <a href="#contact">
+      CONTACT
+    </a>
 
   </div>
 
+</nav>
 
-  <!-- HERO -->
 
-  <section class="hero">
+<!-- HERO -->
 
-    <div class="avatar">
-      LX
+<section
+  class="hero"
+  id="profile"
+>
+
+  <div class="hero-content">
+
+    <div class="hero-small">
+      PERSONAL AUDIO · 2026
     </div>
 
     <h1>
-      LUXX
+      LU<span>XX</span>
     </h1>
 
-    <div class="subtitle">
-      Music · Sound · Obsession
-    </div>
+    <div class="hero-bottom">
 
-    <div class="quote">
+      <div class="hero-description">
 
-      “Music is not background.
-      It is the destination.”
+        A personal space dedicated to music,
+        sound and the endless pursuit of
+        better listening.
 
-      <span>
-        — LUXX
-      </span>
+        <br><br>
 
-    </div>
+        No noise.
+        Just music.
 
-  </section>
-
-
-  <!-- PLAYER -->
-
-  <section class="player">
-
-    <div class="player-top">
-
-      <div class="now">
-        Now Listening
       </div>
 
-      <div class="quality">
-        HI-RES · LOSSLESS
+      <div class="scroll">
+        SCROLL TO EXPLORE ↓
       </div>
 
     </div>
 
+  </div>
 
-    <div class="wave">
-
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-
-    </div>
+</section>
 
 
-    <div class="track">
+<!-- ABOUT -->
 
-      <div>
+<section class="about">
 
-        <div class="track-name">
-          Music Is The End Game
-        </div>
+  <div class="label">
+    01 / PROFILE
+  </div>
 
-        <div class="track-desc">
-          LUXX · PERSONAL SOUND SYSTEM
-        </div>
+  <div class="about-grid">
 
-      </div>
+    <div>
 
-      <div class="play">
-        ▶
+      <div class="bigtitle">
+        MUSIC<br>
+        FIRST.
       </div>
 
     </div>
 
-  </section>
+    <div class="about-text">
 
+      <p>
 
-  <!-- GEAR -->
+        Welcome to <strong>LUXX</strong>.
 
-  <div class="section-title">
-    End Game Setup
+        This is a small corner of the internet
+        built around one obsession:
+
+        <strong>music.</strong>
+
+      </p>
+
+      <br>
+
+      <p>
+
+        From streaming platforms to dedicated
+        audio gear, every part of the setup exists
+        for one reason — getting closer to the music.
+
+      </p>
+
+    </div>
+
   </div>
 
 
-  <section class="gear">
+  <div class="quote">
 
-    <div class="card">
+    “Music is the end game.”
 
-      <small>
-        IEM
-      </small>
+    <span>
+      LUXX · PERSONAL AUDIO
+    </span>
 
-      <strong>
-        Kiwi Ears Belle
-      </strong>
+  </div>
+
+</section>
+
+
+<!-- SETUP -->
+
+<section
+  class="setup"
+  id="setup"
+>
+
+  <div class="setup-header">
+
+    <div>
+
+      <div class="label">
+        02 / END GAME
+      </div>
+
+      <div class="bigtitle">
+        THE<br>
+        SETUP
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="setup-grid">
+
+
+    <div class="setup-card">
+
+      <div class="number">
+        01 / IEM
+      </div>
+
+      <h3>
+        KIWI EARS
+      </h3>
+
+      <p>
+        BELLE
+      </p>
 
     </div>
 
 
-    <div class="card">
+    <div class="setup-card">
 
-      <small>
-        DAC
-      </small>
+      <div class="number">
+        02 / DAC
+      </div>
 
-      <strong>
+      <h3>
         JM7
-      </strong>
+      </h3>
+
+      <p>
+        USB DAC
+      </p>
 
     </div>
 
 
-    <div class="card">
+    <div class="setup-card">
 
-      <small>
-        PLAYER
-      </small>
+      <div class="number">
+        03 / PLAYER
+      </div>
 
-      <strong>
+      <h3>
         UAPP
-      </strong>
+      </h3>
+
+      <p>
+        USB AUDIO PLAYER PRO
+      </p>
 
     </div>
 
-  </section>
+
+  </div>
+
+</section>
 
 
-  <!-- MUSIC -->
+<!-- MUSIC -->
 
-  <div class="section-title">
-    Music Sources
+<section
+  class="music"
+  id="music"
+>
+
+  <div class="label">
+    03 / MUSIC SOURCES
+  </div>
+
+  <div class="bigtitle">
+    WHAT<br>
+    I LISTEN.
   </div>
 
 
-  <section class="services">
+  <div class="music-list">
+
 
     <a
-      class="service"
+      class="music-item"
       href="https://tidal.com/"
       target="_blank"
     >
 
-      <span>
-        STREAMING
-      </span>
+      <div>
 
-      <strong>
-        TIDAL
-      </strong>
+        <div class="music-name">
+          TIDAL
+        </div>
+
+        <div class="music-desc">
+          LOSSLESS · HIGH FIDELITY
+        </div>
+
+      </div>
+
+      <div class="arrow">
+        ↗
+      </div>
 
     </a>
 
 
     <a
-      class="service"
+      class="music-item"
       href="https://www.qobuz.com/"
       target="_blank"
     >
 
-      <span>
-        HI-RES
-      </span>
+      <div>
 
-      <strong>
-        QOBUZ
-      </strong>
+        <div class="music-name">
+          QOBUZ
+        </div>
+
+        <div class="music-desc">
+          HI-RES · STUDIO QUALITY
+        </div>
+
+      </div>
+
+      <div class="arrow">
+        ↗
+      </div>
 
     </a>
 
 
     <a
-      class="service"
+      class="music-item"
       href="https://open.spotify.com/"
       target="_blank"
     >
 
-      <span>
-        DAILY
-      </span>
+      <div>
 
-      <strong>
-        SPOTIFY
-      </strong>
+        <div class="music-name">
+          SPOTIFY
+        </div>
+
+        <div class="music-desc">
+          DAILY LISTENING
+        </div>
+
+      </div>
+
+      <div class="arrow">
+        ↗
+      </div>
 
     </a>
 
-  </section>
+
+  </div>
+
+</section>
 
 
-  <footer>
+<!-- END -->
 
+<section
+  class="end"
+  id="contact"
+>
+
+  <div>
+
+    <div class="label">
+      04 / CONTACT
+    </div>
+
+    <h2>
+      KEEP<br>
+      <span>LISTENING.</span>
+    </h2>
+
+    <p>
+      MUSIC · SOUND · OBSESSION
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div>
+    LUXX
+  </div>
+
+  <div>
     KIWI EARS BELLE × JM7 × UAPP
+  </div>
 
-  </footer>
+  <div>
+    © 2026
+  </div>
 
+</footer>
 
-</div>
 
 </body>
 </html>`;
 
-
     return new Response(html, {
       headers: {
-        "content-type": "text/html;charset=UTF-8"
+        "content-type": "text/html; charset=UTF-8"
       }
     });
-
   }
 };
