@@ -3,26 +3,18 @@ export default {
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LUXX — Music Is The End Game</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap"
-  rel="stylesheet"
->
+<title>LUXX — Personal Audio</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -30,524 +22,317 @@ html {
 }
 
 body {
-  background: #030508;
-  color: #f5f5f5;
+  background: #080808;
+  color: #f2f2f2;
   font-family: Inter, sans-serif;
-  overflow-x: hidden;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  background:
-    radial-gradient(
-      circle at 80% 10%,
-      rgba(0,120,255,.14),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 10% 70%,
-      rgba(0,50,100,.10),
-      transparent 35%
-    );
-
-  pointer-events: none;
-  z-index: -1;
+.container {
+  width: min(1050px, 88%);
+  margin: auto;
 }
 
 
 /* NAV */
 
 nav {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
-  padding: 24px 6%;
+  height: 90px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  z-index: 100;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(3,5,8,.9),
-    transparent
-  );
-
-  backdrop-filter: blur(8px);
+  justify-content: space-between;
 }
 
 .logo {
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 6px;
 }
 
-.navlinks {
+.nav-links {
   display: flex;
   gap: 28px;
 }
 
-.navlinks a {
-  color: #777;
-  text-decoration: none;
-
-  font-size: 9px;
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-  transition: .3s;
-}
-
-.navlinks a:hover {
-  color: white;
-}
-
-
-/* GENERAL */
-
-section {
-  width: 88%;
-  max-width: 1200px;
-
-  margin: auto;
-}
-
-.label {
+.nav-links a {
   color: #666;
-
-  font-size: 9px;
-  letter-spacing: 4px;
-
-  margin-bottom: 18px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  transition: .25s;
 }
 
-.bigtitle {
-  font-family: Anton, sans-serif;
-
-  font-size: clamp(
-    55px,
-    10vw,
-    150px
-  );
-
-  line-height: .85;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
+.nav-links a:hover {
+  color: #fff;
 }
 
 
 /* HERO */
 
 .hero {
-  min-height: 100vh;
+  min-height: 78vh;
 
   display: flex;
   align-items: center;
 
-  position: relative;
-
-  padding-top: 80px;
+  padding: 70px 0;
 }
 
-.hero-content {
-  width: 100%;
-}
-
-.hero-small {
-  color: #888;
-
-  font-size: 10px;
-
-  letter-spacing: 5px;
-
+.hero-label {
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 4px;
   margin-bottom: 25px;
 }
 
 .hero h1 {
-  font-family: Anton, sans-serif;
-
-  font-size: clamp(
-    90px,
-    20vw,
-    260px
-  );
-
-  line-height: .75;
-
-  letter-spacing: -3px;
-
-  color: #f5f5f5;
+  font-size: clamp(70px, 15vw, 170px);
+  line-height: .8;
+  letter-spacing: -7px;
+  font-weight: 600;
 }
 
 .hero h1 span {
-  color: #202b38;
-  -webkit-text-stroke: 1px #526273;
-}
-
-.hero-bottom {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: end;
-
-  margin-top: 45px;
+  color: #555;
 }
 
 .hero-description {
-  max-width: 430px;
+  max-width: 420px;
+
+  margin-top: 42px;
 
   color: #777;
 
-  font-size: 12px;
-
-  line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.9;
 }
 
-.scroll {
+
+/* SECTION */
+
+section {
+  padding: 120px 0;
+}
+
+.section-number {
   color: #555;
-
   font-size: 9px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
 
-  letter-spacing: 3px;
+.section-title {
+  font-size: clamp(42px, 7vw, 85px);
+  line-height: .9;
+  letter-spacing: -3px;
+  font-weight: 600;
 }
 
 
 /* ABOUT */
 
-.about {
-  padding: 150px 0;
-}
-
 .about-grid {
   display: grid;
-
-  grid-template-columns:
-    1fr 1.4fr;
-
-  gap: 80px;
-
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
 }
 
 .about-text {
   color: #888;
-
   font-size: 14px;
-
   line-height: 2;
+  padding-top: 8px;
 }
-
-.about-text strong {
-  color: white;
-}
-
-
-/* QUOTE */
 
 .quote {
-  margin-top: 60px;
+  margin-top: 70px;
+
+  border-top: 1px solid #202020;
+  border-bottom: 1px solid #202020;
 
   padding: 35px 0;
 
-  border-top: 1px solid #18202a;
-  border-bottom: 1px solid #18202a;
+  font-family: "Playfair Display", serif;
 
-  font-family: Georgia, serif;
-
-  font-size: clamp(
-    24px,
-    4vw,
-    48px
-  );
-
-  line-height: 1.25;
-
-  color: #ddd;
+  font-size: clamp(23px, 4vw, 38px);
+  line-height: 1.4;
 }
 
-.quote span {
+.quote small {
   display: block;
 
   margin-top: 18px;
 
+  color: #555;
+
   font-family: Inter, sans-serif;
 
   font-size: 8px;
-
-  letter-spacing: 4px;
-
-  color: #555;
+  letter-spacing: 3px;
 }
 
 
 /* SETUP */
 
-.setup {
-  padding: 100px 0;
-}
-
-.setup-header {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: end;
-
-  margin-bottom: 45px;
-}
-
 .setup-grid {
+  margin-top: 55px;
+
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 14px;
+  border-top: 1px solid #202020;
 }
 
 .setup-card {
-  min-height: 300px;
+  padding: 35px 25px;
 
-  padding: 30px;
-
-  border: 1px solid #17202a;
-
-  background:
-    linear-gradient(
-      145deg,
-      #0b1118,
-      #05070a
-    );
-
-  position: relative;
-
-  overflow: hidden;
-
-  transition: .4s;
+  border-right: 1px solid #202020;
 }
 
-.setup-card::after {
-  content: "";
-
-  position: absolute;
-
-  width: 150px;
-  height: 150px;
-
-  background: rgba(0,130,255,.08);
-
-  filter: blur(70px);
-
-  right: -60px;
-  bottom: -60px;
+.setup-card:last-child {
+  border-right: none;
 }
 
-.setup-card:hover {
-  transform: translateY(-8px);
-
-  border-color: #35485b;
-}
-
-.number {
+.setup-number {
+  color: #555;
   font-size: 9px;
-
-  color: #4d5c6b;
-
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  margin-bottom: 45px;
 }
 
 .setup-card h3 {
-  position: absolute;
-
-  left: 30px;
-  bottom: 55px;
-
-  font-family: Anton, sans-serif;
-
-  font-size: 38px;
-
-  letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .setup-card p {
-  position: absolute;
+  margin-top: 9px;
 
-  left: 30px;
-  bottom: 30px;
-
-  color: #666;
+  color: #555;
 
   font-size: 9px;
-
   letter-spacing: 2px;
 }
 
 
 /* MUSIC */
 
-.music {
-  padding: 130px 0;
-}
-
 .music-list {
-  margin-top: 45px;
+  margin-top: 55px;
 
-  border-top: 1px solid #18202a;
+  border-top: 1px solid #202020;
 }
 
 .music-item {
   display: flex;
 
+  align-items: center;
   justify-content: space-between;
 
-  align-items: center;
+  padding: 28px 5px;
 
-  padding: 30px 5px;
+  border-bottom: 1px solid #202020;
 
-  border-bottom: 1px solid #18202a;
-
-  text-decoration: none;
-
-  color: white;
-
-  transition: .3s;
+  transition: .25s;
 }
 
 .music-item:hover {
-  padding-left: 18px;
-
-  background: rgba(255,255,255,.015);
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #0d0d0d;
 }
 
 .music-name {
-  font-family: Anton, sans-serif;
-
-  font-size: 42px;
-
-  letter-spacing: 1px;
+  font-size: 25px;
+  font-weight: 500;
 }
 
-.music-desc {
+.music-type {
+  margin-top: 7px;
+
   color: #555;
 
-  font-size: 9px;
-
+  font-size: 8px;
   letter-spacing: 2px;
 }
 
 .arrow {
   color: #555;
-
-  font-size: 20px;
+  font-size: 18px;
 }
 
 
 /* END */
 
 .end {
-  min-height: 90vh;
+  min-height: 65vh;
 
   display: flex;
-
   align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
-
-  position: relative;
 }
 
-.end h2 {
-  font-family: Anton, sans-serif;
-
-  font-size: clamp(
-    60px,
-    13vw,
-    180px
-  );
-
-  line-height: .8;
-
-  letter-spacing: -2px;
+.end-text {
+  font-size: clamp(45px, 8vw, 100px);
+  line-height: .95;
+  letter-spacing: -4px;
 }
 
-.end h2 span {
-  color: #26313d;
-}
-
-.end p {
-  margin-top: 35px;
-
-  color: #666;
-
-  font-size: 10px;
-
-  letter-spacing: 4px;
+.end-text span {
+  color: #555;
 }
 
 
 /* FOOTER */
 
 footer {
-  padding: 35px 6%;
+  border-top: 1px solid #181818;
 
-  border-top: 1px solid #111820;
+  padding: 25px 0 40px;
 
   display: flex;
-
   justify-content: space-between;
 
   color: #444;
 
   font-size: 8px;
-
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 
 /* MOBILE */
 
-@media(max-width: 700px) {
+@media (max-width: 700px) {
+
+  .container {
+    width: 88%;
+  }
 
   nav {
-    padding: 20px 6%;
+    height: 75px;
   }
 
-  .navlinks {
-    gap: 12px;
+  .nav-links {
+    gap: 13px;
   }
 
-  .navlinks a {
+  .nav-links a {
     font-size: 7px;
   }
 
+  .hero {
+    min-height: 70vh;
+  }
+
   .hero h1 {
-    font-size: 25vw;
+    letter-spacing: -4px;
   }
 
-  .hero-bottom {
-    display: block;
-  }
-
-  .scroll {
-    margin-top: 30px;
-  }
-
-  .about {
-    padding: 100px 0;
+  section {
+    padding: 90px 0;
   }
 
   .about-grid {
@@ -555,177 +340,115 @@ footer {
     gap: 35px;
   }
 
-  .setup {
-    padding: 80px 0;
-  }
-
-  .setup-header {
-    display: block;
-  }
-
   .setup-grid {
     grid-template-columns: 1fr;
   }
 
   .setup-card {
-    min-height: 240px;
+    border-right: none;
+    border-bottom: 1px solid #202020;
+    padding: 30px 5px;
   }
 
-  .music {
-    padding: 80px 0;
+  .setup-card:last-child {
+    border-bottom: none;
+  }
+
+  .setup-number {
+    margin-bottom: 25px;
   }
 
   .music-name {
-    font-size: 28px;
-  }
-
-  .music-item {
-    gap: 20px;
+    font-size: 20px;
   }
 
   footer {
-    display: block;
-    line-height: 2;
+    gap: 15px;
+    flex-direction: column;
   }
-
 }
-
 </style>
-
 </head>
 
 <body>
 
-
-<!-- NAV -->
+<div class="container">
 
 <nav>
+  <div class="logo">LUXX</div>
 
-  <div class="logo">
-    LUXX
+  <div class="nav-links">
+    <a href="#about">ABOUT</a>
+    <a href="#setup">SETUP</a>
+    <a href="#music">MUSIC</a>
   </div>
-
-  <div class="navlinks">
-
-    <a href="#profile">
-      PROFILE
-    </a>
-
-    <a href="#setup">
-      SETUP
-    </a>
-
-    <a href="#music">
-      MUSIC
-    </a>
-
-    <a href="#contact">
-      CONTACT
-    </a>
-
-  </div>
-
 </nav>
 
 
 <!-- HERO -->
 
-<section
-  class="hero"
-  id="profile"
->
+<header class="hero">
 
-  <div class="hero-content">
+  <div>
 
-    <div class="hero-small">
+    <div class="hero-label">
       PERSONAL AUDIO · 2026
     </div>
 
     <h1>
-      LU<span>XX</span>
+      L<span>U</span>XX
     </h1>
 
-    <div class="hero-bottom">
-
-      <div class="hero-description">
-
-        A personal space dedicated to music,
-        sound and the endless pursuit of
-        better listening.
-
-        <br><br>
-
-        No noise.
-        Just music.
-
-      </div>
-
-      <div class="scroll">
-        SCROLL TO EXPLORE ↓
-      </div>
-
-    </div>
+    <p class="hero-description">
+      A quiet space for music, sound,
+      and the pursuit of better listening.
+    </p>
 
   </div>
 
-</section>
+</header>
 
 
 <!-- ABOUT -->
 
-<section class="about">
+<section id="about">
 
-  <div class="label">
-    01 / PROFILE
+  <div class="section-number">
+    01 / ABOUT
   </div>
 
   <div class="about-grid">
 
-    <div>
-
-      <div class="bigtitle">
-        MUSIC<br>
-        FIRST.
-      </div>
-
-    </div>
+    <h2 class="section-title">
+      MUSIC<br>
+      FIRST.
+    </h2>
 
     <div class="about-text">
 
       <p>
-
-        Welcome to <strong>LUXX</strong>.
-
-        This is a small corner of the internet
-        built around one obsession:
-
-        <strong>music.</strong>
-
+        Music has always been more than
+        background noise.
       </p>
 
       <br>
 
       <p>
-
-        From streaming platforms to dedicated
-        audio gear, every part of the setup exists
-        for one reason — getting closer to the music.
-
+        Every piece of the setup exists
+        for one purpose — to get closer
+        to the music itself.
       </p>
 
     </div>
 
   </div>
 
-
   <div class="quote">
-
     “Music is the end game.”
 
-    <span>
+    <small>
       LUXX · PERSONAL AUDIO
-    </span>
-
+    </small>
   </div>
 
 </section>
@@ -733,44 +456,31 @@ footer {
 
 <!-- SETUP -->
 
-<section
-  class="setup"
-  id="setup"
->
+<section id="setup">
 
-  <div class="setup-header">
-
-    <div>
-
-      <div class="label">
-        02 / END GAME
-      </div>
-
-      <div class="bigtitle">
-        THE<br>
-        SETUP
-      </div>
-
-    </div>
-
+  <div class="section-number">
+    02 / END GAME SETUP
   </div>
 
+  <h2 class="section-title">
+    THE<br>
+    CHAIN.
+  </h2>
 
   <div class="setup-grid">
 
-
     <div class="setup-card">
 
-      <div class="number">
+      <div class="setup-number">
         01 / IEM
       </div>
 
       <h3>
-        KIWI EARS
+        Kiwi Ears Belle
       </h3>
 
       <p>
-        BELLE
+        IN-EAR MONITOR
       </p>
 
     </div>
@@ -778,7 +488,7 @@ footer {
 
     <div class="setup-card">
 
-      <div class="number">
+      <div class="setup-number">
         02 / DAC
       </div>
 
@@ -795,7 +505,7 @@ footer {
 
     <div class="setup-card">
 
-      <div class="number">
+      <div class="setup-number">
         03 / PLAYER
       </div>
 
@@ -809,7 +519,6 @@ footer {
 
     </div>
 
-
   </div>
 
 </section>
@@ -817,45 +526,34 @@ footer {
 
 <!-- MUSIC -->
 
-<section
-  class="music"
-  id="music"
->
+<section id="music">
 
-  <div class="label">
-    03 / MUSIC SOURCES
+  <div class="section-number">
+    03 / MUSIC
   </div>
 
-  <div class="bigtitle">
-    WHAT<br>
-    I LISTEN.
-  </div>
-
+  <h2 class="section-title">
+    SOURCES.
+  </h2>
 
   <div class="music-list">
-
 
     <a
       class="music-item"
       href="https://tidal.com/"
       target="_blank"
+      rel="noopener noreferrer"
     >
 
       <div>
+        <div class="music-name">TIDAL</div>
 
-        <div class="music-name">
-          TIDAL
-        </div>
-
-        <div class="music-desc">
+        <div class="music-type">
           LOSSLESS · HIGH FIDELITY
         </div>
-
       </div>
 
-      <div class="arrow">
-        ↗
-      </div>
+      <div class="arrow">↗</div>
 
     </a>
 
@@ -864,23 +562,18 @@ footer {
       class="music-item"
       href="https://www.qobuz.com/"
       target="_blank"
+      rel="noopener noreferrer"
     >
 
       <div>
+        <div class="music-name">QOBUZ</div>
 
-        <div class="music-name">
-          QOBUZ
-        </div>
-
-        <div class="music-desc">
+        <div class="music-type">
           HI-RES · STUDIO QUALITY
         </div>
-
       </div>
 
-      <div class="arrow">
-        ↗
-      </div>
+      <div class="arrow">↗</div>
 
     </a>
 
@@ -889,26 +582,20 @@ footer {
       class="music-item"
       href="https://open.spotify.com/"
       target="_blank"
+      rel="noopener noreferrer"
     >
 
       <div>
+        <div class="music-name">SPOTIFY</div>
 
-        <div class="music-name">
-          SPOTIFY
-        </div>
-
-        <div class="music-desc">
+        <div class="music-type">
           DAILY LISTENING
         </div>
-
       </div>
 
-      <div class="arrow">
-        ↗
-      </div>
+      <div class="arrow">↗</div>
 
     </a>
-
 
   </div>
 
@@ -917,38 +604,27 @@ footer {
 
 <!-- END -->
 
-<section
-  class="end"
-  id="contact"
->
+<section class="end">
 
   <div>
 
-    <div class="label">
-      04 / CONTACT
+    <div class="section-number">
+      04 / END
     </div>
 
-    <h2>
-      KEEP<br>
-      <span>LISTENING.</span>
-    </h2>
-
-    <p>
-      MUSIC · SOUND · OBSESSION
-    </p>
+    <div class="end-text">
+      JUST<br>
+      <span>LISTEN.</span>
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-  <div>
-    LUXX
-  </div>
+  <div>LUXX</div>
 
   <div>
     KIWI EARS BELLE × JM7 × UAPP
@@ -960,6 +636,7 @@ footer {
 
 </footer>
 
+</div>
 
 </body>
 </html>`;
