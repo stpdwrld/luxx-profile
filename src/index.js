@@ -1009,7 +1009,7 @@ footer{
   .hero-image{
   min-height:clamp(360px,58vw,470px);
 
-  background-position:center 25%;
+  background-position:center 40%;
 }
 
   .hero-content{
@@ -1550,7 +1550,7 @@ footer{
 
       <a
         class="ext"
-        href="https://tidal.com"
+        href="https://tidal.com/artist/83822099"
         target="_blank"
         rel="noopener"
         aria-label="Open TIDAL"
@@ -1600,7 +1600,7 @@ footer{
 
       <a
         class="ext"
-        href="https://www.qobuz.com"
+        href="https://open.qobuz.com/playlist/68538412"
         target="_blank"
         rel="noopener"
         aria-label="Open Qobuz"
@@ -1648,7 +1648,7 @@ footer{
 
       <a
         class="ext"
-        href="https://open.spotify.com"
+        href="https://open.spotify.com/user/31zreorbpnjjqcavb25tpqg66mmi?si=drl6L6PyT5iujG0z9Oj42g&utm_source=copy-link&sci=spotify%3Acard-config%3A1DKJBBHGBcndRYj21aERnq"
         target="_blank"
         rel="noopener"
         aria-label="Open Spotify"
@@ -1716,7 +1716,7 @@ footer{
 
   <a
     class="button"
-    href="https://www.roblox.com/users/"
+    href="https://www.roblox.com/id/users/8707604211/profile"
     target="_blank"
     rel="noopener"
   >
