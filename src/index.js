@@ -267,17 +267,17 @@ footer{
     <article class="card">
       <span class="index">01</span><span class="type">IEM</span>
       <h3>Kiwi Ears Belle</h3>
-      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/iem.png" alt="IEM">
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/iem.jpg" alt="IEM">
     </article>
     <article class="card">
       <span class="index">02</span><span class="type">DAC</span>
       <h3>JM7</h3>
-      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac.png" alt="Audio DAC">
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac.jpg" alt="Audio DAC">
     </article>
     <article class="card">
       <span class="index">03</span><span class="type">Player</span>
       <h3>UAPP</h3>
-      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/uapp.png" alt="Music player">
+      <img class="product-image" src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/uapp.jpg" alt="Music player">
     </article>
   </div>
 </section>
