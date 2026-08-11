@@ -1308,48 +1308,21 @@ footer{
 
 <body>
 
-
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
-
 <!-- =======================================================
      NAVIGATION
 ======================================================= -->
 
 <header class="topbar">
 
-  <a class="brand" href="javascript:void(0)" onclick="scrollToSection('profile')">
+  <a class="brand" href="javascript:void(0)">
     LUXX
   </a>
 
   <nav class="nav">
-
-    <a class="active" href="javascript:void(0)" onclick="scrollToSection('profile')">
-      Profile
-    </a>
-
-    <a href="javascript:void(0)" onclick="scrollToSection('setup')">
-      Setup
-    </a>
-
-    <a href="javascript:void(0)" onclick="scrollToSection('music')">
-      Music
-    </a>
-
-    <a href="javascript:void(0)" onclick="scrollToSection('roblox')">
-      Roblox
-    </a>
-
-    <a href="javascript:void(0)" onclick="scrollToSection('about')">
-      About
-    </a>
-
+    <span class="active">Profile</span>
   </nav>
 
 </header>
-
-<main>
 
 <!-- =======================================================
      HERO
