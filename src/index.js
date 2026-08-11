@@ -1009,7 +1009,7 @@ footer{
   .hero-image{
   min-height:clamp(360px,58vw,470px);
 
-  background-position:center 40%;
+  background-position:center 70%;
 }
 
   .hero-content{
@@ -1695,7 +1695,7 @@ footer{
 <div class="roblox-info">
 
   <div class="roblox-name">
-    LUXXER
+    LuxxVoid
 
     <span class="badge">
       ✓
@@ -1709,8 +1709,7 @@ footer{
 
 
   <div class="roblox-desc">
-    Beberapa game yang dimainkan<br>
-    dan dunia yang dijelajahi.
+    Games & experiences.
   </div>
 
 
@@ -1732,24 +1731,34 @@ footer{
      PHILOSOPHY
 ======================================================= -->
 
-<section id="philosophy" class="quote">  <aside class="row-label"><div class="num">
-  05
-</div>
+<section id="philosophy" class="quote">
 
-<div class="row-title">
-  About
-</div>
+  <aside class="row-label">
 
-<span class="dash"></span>
+    <div class="num">
+      05
+    </div>
 
-  </aside>  <div class="quote-content"><h2>
-  Just music.<br>
-  <em>Nothing more.</em>
-</h2>
+    <div class="row-title">
+      About
+    </div>
 
-<div class="wave"></div>
+    <span class="dash"></span>
 
-  </div></section></main>
+  </aside>
+
+  <div class="quote-content">
+
+    <h2>
+      Music, audio,<br>
+      <em>and a few things I like.</em>
+    </h2>
+
+    <div class="wave"></div>
+
+  </div>
+
+</section>
 
 
 <!-- =======================================================
