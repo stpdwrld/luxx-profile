@@ -1467,14 +1467,14 @@ footer{
   </div>
 
   <h3>
-    KINERA CELEST CD-2
+    Kinera Celest CD-2
   </h3>
 
   <div class="product-frame">
     <img
       class="product-image"
       src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac2.png"
-      alt="KINERA CELEST CD-2"
+      alt="Kinera Celest CD-2"
     >
   </div>
 
