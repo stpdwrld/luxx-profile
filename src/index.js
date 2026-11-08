@@ -1452,8 +1452,8 @@ footer{
   <div class="product-frame">
     <img
       class="product-image"
-      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac.png"
-      alt="JCALLY JM7"
+      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/dac2.png"
+      alt="KINERA CELEST CD-2"
     >
   </div>
 
@@ -1484,7 +1484,6 @@ footer{
 </article>
 
   </div></section>
-
 
 <!-- =======================================================
      MUSIC PLATFORMS
@@ -1537,7 +1536,7 @@ footer{
 
       <a
         class="ext"
-        href="https://tidal.com/artist/83822099"
+        href="https://tidal.com/artist/88813494"
         target="_blank"
         rel="noopener"
         aria-label="Open TIDAL"
@@ -1608,111 +1607,9 @@ footer{
 
     </div>
 
-
-    <!-- SPOTIFY -->
-
-    <div class="platform">
-
-      <span class="logo image-logo">
-
-        <img
-          src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/spotify.png"
-          alt="Spotify"
-        >
-
-      </span>
-
-
-      <span class="platform-name">
-        SPOTIFY
-      </span>
-
-
-      <span class="platform-desc">
-        Everyday Listening.
-      </span>
-
-
-      <a
-        class="ext"
-        href="https://open.spotify.com/user/31zreorbpnjjqcavb25tpqg66mmi?si=drl6L6PyT5iujG0z9Oj42g&utm_source=copy-link&sci=spotify%3Acard-config%3A1DKJBBHGBcndRYj21aERnq"
-        target="_blank"
-        rel="noopener"
-        aria-label="Open Spotify"
-      >
-
-        <svg
-          viewBox="0 0 16 16"
-          aria-hidden="true"
-        >
-
-          <path d="M4 12L12 4"></path>
-
-          <path d="M6 4H12V10"></path>
-
-        </svg>
-
-      </a>
-
-    </div>
-
-
   </div>
 
 </section>
-
-
-<!-- =======================================================
-     ROBLOX
-======================================================= -->
-
-<section id="roblox" class="row">  <aside class="row-label"><div class="num">
-  04
-</div>
-
-<div class="row-title">
-  GAMES
-</div>
-
-<span class="dash"></span>
-
-  </aside>  <div class="roblox-box"><div class="roblox-art"></div>
-
-
-<div class="roblox-info">
-
-  <div class="roblox-name">
-    LuxxVoid
-
-    <span class="badge">
-      ✓
-    </span>
-  </div>
-
-
-  <div class="roblox-meta">
-    Roblox
-  </div>
-
-
-  <div class="roblox-desc">
-    Games & experiences.
-  </div>
-
-
-  <a
-    class="button"
-    href="https://www.roblox.com/id/users/8707604211/profile"
-    target="_blank"
-    rel="noopener"
-  >
-    View Profile
-  </a>
-
-</div>
-
-  </div></section>
-
 
 <!-- =======================================================
      about
