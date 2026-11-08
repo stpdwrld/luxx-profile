@@ -1373,15 +1373,14 @@ footer{
 <span class="dash"></span>
 
   </aside>  <div class="profile"><h2>
-  Music, audio,<br>
-  <em>and games.</em>
+  Music<br>
+  <em>and audio.</em>
 </h2>
 
 <div>
 
   <p>
-    A small collection of things
-    that make up my everyday life.
+    A small collection of sounds and gear that make up my everyday life.
   </p>
 
   <p style="margin-top:14px">
@@ -1435,18 +1434,40 @@ footer{
 
 </article>
 
-
 <article class="card">
 
   <div class="card-header">
     <div class="card-top">
       <span class="index">02</span>
+      <span class="type">CABLE</span>
+    </div>
+  </div>
+
+  <h3>
+    Yongse Piano 6N Single Crystal Copper
+  </h3>
+
+  <div class="product-frame">
+    <img
+      class="product-image"
+      src="https://raw.githubusercontent.com/stpdwrld/bahanprof/main/kabel.png"
+      alt="Yongse Piano 6N Single Crystal Copper"
+    >
+  </div>
+
+</article>
+
+<article class="card">
+
+  <div class="card-header">
+    <div class="card-top">
+      <span class="index">03</span>
       <span class="type">DAC</span>
     </div>
   </div>
 
   <h3>
-    JCALLY JM7
+    KINERA CELEST CD-2
   </h3>
 
   <div class="product-frame">
@@ -1464,8 +1485,8 @@ footer{
 
   <div class="card-header">
     <div class="card-top">
-      <span class="index">03</span>
-      <span class="type">Player</span>
+      <span class="index">04</span>
+      <span class="type">Music Player</span>
     </div>
   </div>
 
