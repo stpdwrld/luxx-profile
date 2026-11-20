@@ -129,33 +129,28 @@ img{
 .menu-toggle {
   width: 58px;
   height: 58px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-
+  gap: 6px;
   border: none;
   border-radius: 50%;
   background: #f5f5f3;
-
   cursor: pointer;
   z-index: 101;
 }
 
 .menu-toggle span {
   width: 23px;
-  height: 3px;
-
+  height: 2px;
   border-radius: 10px;
   background: #050505;
-
-  transition: .3s ease;
+  transition: .35s ease;
 }
 
 .menu-toggle span:last-child {
-  width: 15px;
+  width: 23px;
 }
 
 /* OVERLAY */
@@ -1483,18 +1478,18 @@ footer{
 
   <a class="brand" href="#top">LUXX</a>
 
-  <button class="menu-toggle" id="menuToggle"
-    aria-label="Open menu">
-    <span></span>
-    <span></span>
-  </button>
+<button class="menu-toggle" id="menuToggle"
+  aria-label="Open menu"
+  aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
 </header>
 
-<!-- OVERLAY -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
 
-<!-- SIDE DRAWER -->
 <aside class="side-drawer" id="sideDrawer">
 
   <div class="drawer-header">
@@ -1509,9 +1504,10 @@ footer{
 
     <div class="drawer-label">NAVIGATION</div>
 
-    <a href="#profile" class="drawer-link">
+    <a href="/profile" class="drawer-link">
       <span>01</span>
       Profile
+      <span class="drawer-arrow">↗</span>
     </a>
 
     <a href="https://live.luxx.my.id" class="drawer-link">
@@ -1877,6 +1873,7 @@ footer{
 
 </footer>
 
+<script>
 const menuToggle = document.getElementById("menuToggle");
 const sideDrawer = document.getElementById("sideDrawer");
 const drawerOverlay = document.getElementById("drawerOverlay");
@@ -1885,12 +1882,16 @@ const drawerClose = document.getElementById("drawerClose");
 function openDrawer() {
   sideDrawer.classList.add("show");
   drawerOverlay.classList.add("show");
+
+  menuToggle.setAttribute("aria-expanded", "true");
   document.body.style.overflow = "hidden";
 }
 
 function closeDrawer() {
   sideDrawer.classList.remove("show");
   drawerOverlay.classList.remove("show");
+
+  menuToggle.setAttribute("aria-expanded", "false");
   document.body.style.overflow = "";
 }
 
@@ -1905,6 +1906,7 @@ document.querySelectorAll(".drawer-link").forEach(link => {
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeDrawer();
 });
+</script>
 
 </body>
 </html>
