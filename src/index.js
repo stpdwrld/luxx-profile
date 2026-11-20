@@ -1477,6 +1477,20 @@ footer{
   }
 }
 
+/* TEXT SELECTION */
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Tetap bisa memilih teks dengan tekan dan tahan */
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 </style>
 </head>
 
@@ -1530,7 +1544,7 @@ footer{
   </div>
 
   <div class="drawer-footer">
-    <span>LUXX — PERSONAL SPACE</span>
+    <span>LUXX</span>
     <span>© 2026</span>
   </div>
 
