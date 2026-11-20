@@ -1477,16 +1477,17 @@ footer{
   }
 }
 
-/* DISABLE TEXT COPY MENU */
+/* TEXT SELECTION */
 
 body {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
 }
 
-* {
-  -webkit-touch-callout: none;
+a, button {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 </style>
