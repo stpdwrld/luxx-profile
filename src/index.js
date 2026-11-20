@@ -165,7 +165,6 @@ img{
   transform:translateX(-50%);
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -1323,14 +1322,31 @@ footer{
      NAVIGATION
 ======================================================= -->
 
+
 <header class="topbar">
 
-  <a class="brand" href="javascript:void(0)">
+  <a class="brand" href="#top">
     LUXX
   </a>
 
   <nav class="nav">
-    <span class="active">Profile</span>
+
+    <a href="#profile" class="active">
+      Profile
+    </a>
+
+    <a href="#setup">
+      Audio
+    </a>
+
+    <a
+      href="https://live.luxx.my.id"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Live Music
+    </a>
+
   </nav>
 
 </header>
@@ -1682,6 +1698,28 @@ footer{
 
 </footer>
 
+
+const menuToggle = document.getElementById("menuToggle");
+const dropdownMenu = document.getElementById("dropdownMenu");
+
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("open");
+  dropdownMenu.classList.toggle("show");
+});
+
+dropdownMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    menuToggle.classList.remove("open");
+    dropdownMenu.classList.remove("show");
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".menu-container")) {
+    menuToggle.classList.remove("open");
+    dropdownMenu.classList.remove("show");
+  }
+});
 
 </body>
 </html>
