@@ -123,46 +123,201 @@ img{
   letter-spacing:.48em;
 }
 
-.nav{
-  display:flex;
-  align-items:center;
-  gap:40px;
 
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.13em;
+/* MENU BUTTON */
+
+.menu-toggle {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 50%;
+  background: #f5f5f3;
+
+  cursor: pointer;
+  z-index: 101;
 }
 
-.nav a{
-  position:relative;
-  opacity:.62;
-  transition:opacity .25s ease;
+.menu-toggle span {
+  width: 23px;
+  height: 3px;
+
+  border-radius: 10px;
+  background: #050505;
+
+  transition: .3s ease;
 }
 
-.nav a:hover{
-  opacity:1;
+.menu-toggle span:last-child {
+  width: 15px;
 }
 
-.nav a.active{
-  opacity:1;
+/* OVERLAY */
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(3px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity .4s ease,
+              visibility .4s ease;
+
+  z-index: 90;
 }
 
-.nav a.active::after{
-  content:"";
+.drawer-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
 
-  position:absolute;
+/* DRAWER */
 
-  left:50%;
-  bottom:-12px;
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
 
-  width:3px;
-  height:3px;
+  width: min(390px, 88vw);
+  height: 100dvh;
 
-  border-radius:50%;
+  display: flex;
+  flex-direction: column;
 
-  background:#fff;
+  padding: 35px 30px;
 
-  transform:translateX(-50%);
+  background: #f4f4f1;
+  color: #111;
+
+  transform: translateX(-105%);
+  transition: transform .45s cubic-bezier(.22,.61,.36,1);
+
+  z-index: 100;
+}
+
+.side-drawer.show {
+  transform: translateX(0);
+}
+
+/* HEADER */
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-title {
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: .35em;
+}
+
+.drawer-close {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 50%;
+
+  background: transparent;
+  color: #111;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* CONTENT */
+
+.drawer-content {
+  margin-top: 100px;
+}
+
+.drawer-label {
+  margin-bottom: 25px;
+
+  color: #888;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .18em;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  padding: 23px 5px;
+
+  border-bottom: 1px solid rgba(0,0,0,.12);
+
+  color: #111;
+  font-family: var(--serif);
+  font-size: 27px;
+
+  transition: padding .25s ease;
+}
+
+.drawer-link:hover {
+  padding-left: 13px;
+}
+
+.drawer-link > span:first-child {
+  color: #999;
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.drawer-arrow {
+  margin-left: auto;
+  color: #888;
+  font-family: var(--sans);
+  font-size: 16px;
+}
+
+/* FOOTER */
+
+.drawer-footer {
+  margin-top: auto;
+  padding-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  border-top: 1px solid rgba(0,0,0,.12);
+
+  color: #888;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+  .side-drawer {
+    padding: 28px 24px;
+  }
+
+  .drawer-content {
+    margin-top: 85px;
+  }
+
+  .drawer-link {
+    font-size: 25px;
+  }
 }
 
 /* =========================================================
@@ -1323,33 +1478,57 @@ footer{
 ======================================================= -->
 
 
+
 <header class="topbar">
 
-  <a class="brand" href="#top">
-    LUXX
-  </a>
+  <a class="brand" href="#top">LUXX</a>
 
-  <nav class="nav">
+  <button class="menu-toggle" id="menuToggle"
+    aria-label="Open menu">
+    <span></span>
+    <span></span>
+  </button>
 
-    <a href="#profile" class="active">
+</header>
+
+<!-- OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- SIDE DRAWER -->
+<aside class="side-drawer" id="sideDrawer">
+
+  <div class="drawer-header">
+    <span class="drawer-title">LUXX</span>
+
+    <button class="drawer-close" id="drawerClose">
+      ×
+    </button>
+  </div>
+
+  <div class="drawer-content">
+
+    <div class="drawer-label">NAVIGATION</div>
+
+    <a href="#profile" class="drawer-link">
+      <span>01</span>
       Profile
     </a>
 
-    <a href="#setup">
-      Audio
-    </a>
-
-    <a
-      href="https://live.luxx.my.id"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://live.luxx.my.id" class="drawer-link">
+      <span>02</span>
       Live Music
+      <span class="drawer-arrow">↗</span>
     </a>
 
-  </nav>
+  </div>
 
-</header>
+  <div class="drawer-footer">
+    <span>LUXX — PERSONAL SPACE</span>
+    <span>© 2026</span>
+  </div>
+
+</aside>
+
 
 <!-- =======================================================
      HERO
@@ -1698,27 +1877,33 @@ footer{
 
 </footer>
 
-
 const menuToggle = document.getElementById("menuToggle");
-const dropdownMenu = document.getElementById("dropdownMenu");
+const sideDrawer = document.getElementById("sideDrawer");
+const drawerOverlay = document.getElementById("drawerOverlay");
+const drawerClose = document.getElementById("drawerClose");
 
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("open");
-  dropdownMenu.classList.toggle("show");
+function openDrawer() {
+  sideDrawer.classList.add("show");
+  drawerOverlay.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeDrawer() {
+  sideDrawer.classList.remove("show");
+  drawerOverlay.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+menuToggle.addEventListener("click", openDrawer);
+drawerClose.addEventListener("click", closeDrawer);
+drawerOverlay.addEventListener("click", closeDrawer);
+
+document.querySelectorAll(".drawer-link").forEach(link => {
+  link.addEventListener("click", closeDrawer);
 });
 
-dropdownMenu.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    menuToggle.classList.remove("open");
-    dropdownMenu.classList.remove("show");
-  });
-});
-
-document.addEventListener("click", (event) => {
-  if (!event.target.closest(".menu-container")) {
-    menuToggle.classList.remove("open");
-    dropdownMenu.classList.remove("show");
-  }
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeDrawer();
 });
 
 </body>
