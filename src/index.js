@@ -77,6 +77,13 @@ body{
   font-weight:300;
 
   letter-spacing:.02em;
+  -webkit-user-select: none; /* Untuk Safari & Chrome mobile */
+  user-select: none;          /* Standar modern */
+  
+  /* Mencegah munculnya callout menu bawaan HP saat ditekan */
+  -webkit-touch-callout: none;
+}
+
 }
 
 a{
@@ -1476,13 +1483,6 @@ footer{
     transition:none!important;
   }
 }
-
-body {
-  -webkit-user-select: text;
-  user-select: text;
-  -webkit-touch-callout: default;
-}
-
 
 </style>
 </head>
