@@ -1477,6 +1477,13 @@ footer{
   }
 }
 
+body {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+
 </style>
 </head>
 
