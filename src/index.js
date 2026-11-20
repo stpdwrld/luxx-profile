@@ -1487,19 +1487,17 @@ footer{
      NAVIGATION
 ======================================================= -->
 
-
-
 <header class="topbar">
 
-  <a class="brand" href="#top">LUXX</a>
+  <a class="brand" href="https://www.luxx.my.id">LUXX</a>
 
-<button class="menu-toggle" id="menuToggle"
-  aria-label="Open menu"
-  aria-expanded="false">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+  <button class="menu-toggle" id="menuToggle"
+    aria-label="Open menu"
+    aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
 </header>
 
@@ -1519,16 +1517,14 @@ footer{
 
     <div class="drawer-label">NAVIGATION</div>
 
-    <a href="/profile" class="drawer-link">
+    <a href="https://www.luxx.my.id" class="drawer-link">
       <span>01</span>
       Profile
-      <span class="drawer-arrow">↗</span>
     </a>
 
     <a href="https://live.luxx.my.id" class="drawer-link">
       <span>02</span>
       Live Music
-      <span class="drawer-arrow">↗</span>
     </a>
 
   </div>
