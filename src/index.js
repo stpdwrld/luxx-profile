@@ -77,6 +77,9 @@ body{
   font-weight:300;
 
   letter-spacing:.02em;
+
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 a{
