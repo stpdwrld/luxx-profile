@@ -1921,6 +1921,33 @@ document.querySelectorAll(".drawer-link").forEach(link => {
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeDrawer();
 });
+
+let pressTimer;
+let longPressed = false;
+
+document.addEventListener("touchstart", () => {
+  longPressed = false;
+
+  pressTimer = setTimeout(() => {
+    longPressed = true;
+    document.body.classList.add("selecting");
+  }, 600);
+}, { passive: true });
+
+document.addEventListener("touchmove", () => {
+  clearTimeout(pressTimer);
+  document.body.classList.remove("selecting");
+}, { passive: true });
+
+document.addEventListener("touchend", () => {
+  clearTimeout(pressTimer);
+}, { passive: true });
+
+document.addEventListener("selectionchange", () => {
+  if (window.getSelection().toString().length === 0) {
+    document.body.classList.remove("selecting");
+  }
+});
 </script>
 
 </body>
