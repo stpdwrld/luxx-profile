@@ -176,9 +176,24 @@ img{
   visibility: visible;
 }
 
-/* DARK LUXURY DRAWER */
+/* DRAWER */
+
+
+/* DRAWER */
 
 .side-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: min(390px, 88vw);
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 35px 30px;
+
   background: #080808;
   color: #f1f1ef;
 
@@ -186,48 +201,12 @@ img{
 
   transform: translateX(-105%);
   transition: transform .45s cubic-bezier(.22,.61,.36,1);
+
+  z-index: 100;
 }
 
-.drawer-title {
-  color: #f1f1ef;
-}
-
-.drawer-close {
-  border: 1px solid rgba(255,255,255,.18);
-  color: #f1f1ef;
-  background: transparent;
-}
-
-.drawer-label {
-  color: #777;
-}
-
-.drawer-link {
-  color: #eaeae8;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-}
-
-.drawer-link > span:first-child {
-  color: #666;
-}
-
-.drawer-link:hover {
-  padding-left: 13px;
-  background: rgba(255,255,255,.035);
-}
-
-.drawer-arrow {
-  color: #888;
-}
-
-.drawer-footer {
-  color: #666;
-  border-top: 1px solid rgba(255,255,255,.12);
-}
-
-.drawer-overlay {
-  background: rgba(0,0,0,.75);
-  backdrop-filter: blur(5px);
+.side-drawer.show {
+  transform: translateX(0);
 }
 
 /* HEADER */
@@ -239,6 +218,8 @@ img{
 }
 
 .drawer-title {
+  color: #f1f1ef;
+
   font-family: var(--sans);
   font-size: 22px;
   font-weight: 500;
@@ -249,14 +230,21 @@ img{
   width: 40px;
   height: 40px;
 
-  border: 1px solid rgba(0,0,0,.15);
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: 50%;
 
   background: transparent;
-  color: #111;
+  color: #f1f1ef;
 
   font-size: 25px;
   cursor: pointer;
+
+  transition: .25s ease;
+}
+
+.drawer-close:hover {
+  background: #f1f1ef;
+  color: #080808;
 }
 
 /* CONTENT */
@@ -268,7 +256,7 @@ img{
 .drawer-label {
   margin-bottom: 25px;
 
-  color: #888;
+  color: #777;
   font-family: var(--mono);
   font-size: 9px;
   letter-spacing: .18em;
@@ -281,9 +269,9 @@ img{
 
   padding: 23px 5px;
 
-  border-bottom: 1px solid rgba(0,0,0,.12);
+  border-bottom: 1px solid rgba(255,255,255,.12);
 
-  color: #111;
+  color: #f1f1ef;
   font-family: var(--serif);
   font-size: 27px;
 
@@ -295,14 +283,14 @@ img{
 }
 
 .drawer-link > span:first-child {
-  color: #999;
+  color: #666;
   font-family: var(--mono);
   font-size: 10px;
 }
 
 .drawer-arrow {
   margin-left: auto;
-  color: #888;
+  color: #777;
   font-family: var(--sans);
   font-size: 16px;
 }
@@ -317,9 +305,9 @@ img{
   justify-content: space-between;
   gap: 10px;
 
-  border-top: 1px solid rgba(0,0,0,.12);
+  border-top: 1px solid rgba(255,255,255,.12);
 
-  color: #888;
+  color: #666;
   font-family: var(--mono);
   font-size: 8px;
   letter-spacing: .08em;
@@ -340,6 +328,7 @@ img{
     font-size: 25px;
   }
 }
+
 
 /* =========================================================
    HERO
