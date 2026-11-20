@@ -77,11 +77,13 @@ body{
   font-weight:300;
 
   letter-spacing:.02em;
-  -webkit-tap-highlight-color: transparent;
+  
+  webkit-tap-highlight-color: transparent;
 }
 
-* {
-  -webkit-touch-callout: default;
+p, h1, h2, h3, span, li {
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 a{
