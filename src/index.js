@@ -77,10 +77,14 @@ body{
   font-weight:300;
 
   letter-spacing:.02em;
+  
+  -webkit-tap-highlight-color: transparent;
+}
 
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
+p, h1, h2, h3, span {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 a{
@@ -1920,33 +1924,6 @@ document.querySelectorAll(".drawer-link").forEach(link => {
 
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeDrawer();
-});
-
-let pressTimer;
-let longPressed = false;
-
-document.addEventListener("touchstart", () => {
-  longPressed = false;
-
-  pressTimer = setTimeout(() => {
-    longPressed = true;
-    document.body.classList.add("selecting");
-  }, 600);
-}, { passive: true });
-
-document.addEventListener("touchmove", () => {
-  clearTimeout(pressTimer);
-  document.body.classList.remove("selecting");
-}, { passive: true });
-
-document.addEventListener("touchend", () => {
-  clearTimeout(pressTimer);
-}, { passive: true });
-
-document.addEventListener("selectionchange", () => {
-  if (window.getSelection().toString().length === 0) {
-    document.body.classList.remove("selecting");
-  }
 });
 </script>
 
