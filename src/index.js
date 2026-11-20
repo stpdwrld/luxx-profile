@@ -176,32 +176,58 @@ img{
   visibility: visible;
 }
 
-/* DRAWER */
+/* DARK LUXURY DRAWER */
 
 .side-drawer {
-  position: fixed;
-  top: 0;
-  left: 0;
+  background: #080808;
+  color: #f1f1ef;
 
-  width: min(390px, 88vw);
-  height: 100dvh;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 35px 30px;
-
-  background: #f4f4f1;
-  color: #111;
+  border-right: 1px solid rgba(255,255,255,.12);
 
   transform: translateX(-105%);
   transition: transform .45s cubic-bezier(.22,.61,.36,1);
-
-  z-index: 100;
 }
 
-.side-drawer.show {
-  transform: translateX(0);
+.drawer-title {
+  color: #f1f1ef;
+}
+
+.drawer-close {
+  border: 1px solid rgba(255,255,255,.18);
+  color: #f1f1ef;
+  background: transparent;
+}
+
+.drawer-label {
+  color: #777;
+}
+
+.drawer-link {
+  color: #eaeae8;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.drawer-link > span:first-child {
+  color: #666;
+}
+
+.drawer-link:hover {
+  padding-left: 13px;
+  background: rgba(255,255,255,.035);
+}
+
+.drawer-arrow {
+  color: #888;
+}
+
+.drawer-footer {
+  color: #666;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.drawer-overlay {
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(5px);
 }
 
 /* HEADER */
