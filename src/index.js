@@ -77,6 +77,10 @@ body{
   font-weight:300;
 
   letter-spacing:.02em;
+
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 a{
@@ -1475,30 +1479,6 @@ footer{
   *::after{
     transition:none!important;
   }
-}
-
-/* TEXT SELECTION CONTROL */
-
-body {
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-/* Tetap izinkan copy dengan long press */
-p,
-h1,
-h2,
-h3,
-span,
-a,
-.row-title,
-.platform-name,
-.roblox-desc,
-.hero-copy,
-.profile p,
-.drawer-link {
-  -webkit-user-select: text;
-  user-select: text;
 }
 
 </style>
