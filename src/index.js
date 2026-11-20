@@ -1477,18 +1477,16 @@ footer{
   }
 }
 
-/* TEXT SELECTION */
+/* DISABLE TEXT COPY MENU */
 
 body {
   -webkit-user-select: none;
   user-select: none;
+  -webkit-touch-callout: none;
 }
 
-/* Tetap bisa memilih teks dengan tekan dan tahan */
-input,
-textarea {
-  -webkit-user-select: text;
-  user-select: text;
+* {
+  -webkit-touch-callout: none;
 }
 
 </style>
